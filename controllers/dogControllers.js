@@ -7,7 +7,7 @@ const dogController = {
         try {
             const Doggy = await Dog.find({})
     
-            res.render('dog/dog.ejs', {
+            res.render('dog.ejs', {
                 dogs : Doggy
             })
     
