@@ -6,7 +6,7 @@ const app = express();
 
 require ('./db/db');
 
-// add ROUTES HERE
+const userRoutes = require('./routes/userRoutes');
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(methodOverride('_method'));
@@ -15,6 +15,7 @@ app.use(session({
   resave: false,
   saveUninitialized: false
 }));
+app.use('/users', userRoutes);
 // USE ROUTE HERE
 
 app.listen(3000, () => {
