@@ -1,26 +1,24 @@
 <%- include ../partials/header %>
-<!-- <form>
+<form action="/dog" method="POST">
     <label>Name:</label></br>
-    <input type="text" name="name" /></br>
+    <input type="text" name="name" required/></br>
     <label>Sex:</label></br>
     <select id="dog-sex" name="sex">
             <option value="">--Please choose an option--</option>
             <option value="Male">Male</option>
             <option value="Female">Female</option> 
     </select></br>
-    <label>Is it House Trained</label></br>
-    <input type="checkbox" name="isHouseBroken">
+    <label>Is it House Trained</label>
+    <input type="checkbox" name="isHouseBroken" /></br>
     <label>Breed:</label></br>
-    <input type="text" name="breed" />
+    <input type="text" name="breed" /></br>
     <label>Age:</label></br>
-    <input type="number" name="age" max="15" min="0" />
+    <input type="number" name="age" max="15" min="0" /></br>
     <label>Location:</label></br>
-    <textarea type="text" name="location"></textarea>
-    <label>Description:</label>
-    <textarea type="text" maxlength="100" name="description"></textarea>
+    <textarea type="text" name="location"></textarea></br>
+    <label>Description:</label></br>
+    <textarea type="text" maxlength="100" name="description"></textarea></br>
+    <input type="submit" value="Upstream Dog" /> 
 </form>
-
- -->
- <h1>hello</h1>
 
 <%- include ../partials/footer %>

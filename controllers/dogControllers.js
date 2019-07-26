@@ -16,13 +16,18 @@ const dogController = {
         }
     },
     newPerrito: async (req, res, next) => {
-      try {
-        res.send('Hello')
-      } catch (err) {
-        next(err)
-      }
-    },
-    create: async (req, res) => {
+        try {
+            res.render('dog/new.ejs');
+        } catch(err) {
+          res.send(err);
+        }
+      },
+    newDog: async (req, res) => {
+        if ( req.body.isHouseBroken === 'on') {
+            req.body.isHouseBroken = true
+        } else {
+            req.body.isHouseBroken = false
+        }
         console.log(req.body)
         try {
           const newDog = await Dog.create(req.body)
