@@ -4,7 +4,7 @@ const connectionString = 'mongodb://localhost/men-stack-project';
 
 mongoose.connect(connectionString, {
   useNewUrlParser: true,
-  useCreateNewIndex: true,
+  useCreateIndex: true,
   useFindAndModify: false
 });
 
