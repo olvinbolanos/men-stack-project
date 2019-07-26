@@ -3,11 +3,11 @@ const mongoose = require('mongoose')
 const dogSchema = new mongoose.Schema({
     name : {type: String, required: true},
     description: String,
-    isGood : {type : Boolean, required :true},
-    isPottyTrained : {type: Boolean, optional: true},
+    isHouseBroken : {type: Boolean, optional: true},
     sex : String,
     age : Number,
-    breed : [String]
+    breed : [String],
+    location : String
 })
 
 const Dog = mongoose.model('Dogs', dogSchema)
