@@ -14,8 +14,26 @@ const dogController = {
         } catch (err) {
             res.send(err)
         }
-    }
+    },
+    create: async (req, res) => {
+        console.log(req.body)
+        try {
+          const newDog = Dog.create(req.body)
 
+          res.redirect('/dogs')
+
+
+        } catch (err) {
+            res.send(err)
+        }
+    },
+    newPerrito: async (req, res) => {
+      try {
+        res.render('new.ejs')
+      } catch (err) {
+        res.send(err)
+      }
+    }
 } 
 
 module.exports = dogController;
