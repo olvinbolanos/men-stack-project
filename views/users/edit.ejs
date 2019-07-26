@@ -1,4 +1,4 @@
-<%-include('./partials/header')%>
+<%-include('../partials/header')%>
     <header>
         <h1>Hello <%=user.name%>, Edit Your Info Below</h1>
             <nav>
@@ -19,4 +19,9 @@
                 <input type="password" name="phone" value="<%=user.password%>"/><br/>
                 <input type="submit" value="Update Account"/>
             </form>
-<%-include('./partials/footer')%>
+            <section>
+                <form action="/users/<%=user._id%>?_method=DELETE" method="post">
+                    <input type="submit" value="Delete Author"/>
+                </form>
+            </section>
+<%-include('../partials/footer')%>

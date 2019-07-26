@@ -1,0 +1,34 @@
+<%-include('../partials/header')%>
+
+        <header>
+            <h1><%=user.name%></h1>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="/dogs">Home</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section>
+                <h2>Contributer Details:</h2>
+                <ul>
+                    <li>Username: <%=user.username%></li>
+                </ul>
+            </section>
+            <section>
+                <h2>Available pets posted by <%=user.name%>:</h2>
+                <ul>
+                    <% for(let i = 0; i < user.pets.length; i++){ %>
+                        <li><a href="/users/<%=user.pets[i]._id%>"><%=user.pets[i].name%></a></li>
+                    <% } %>
+                </ul>
+            </section>
+            <section>
+                <a href="/users/<%=user._id%>/edit">Edit Account</a>
+            </section>
+        </main>
+
+
+<%-include('../partials/footer')%>
