@@ -15,7 +15,7 @@ const userController = {
     },
     edit: async (req, res) => {
         try{
-            const foundUsers = await User.findById(req.params.id);
+            const foundUser = await User.findById(req.params.id);
             res.render('users/edit.ejs', {
                 user: foundUser
             })
@@ -27,6 +27,15 @@ const userController = {
         try{
             const updatedUser = await User.findByIdAndUpdate(req.params.id, req.body);
             res.redirect(`users/${req.params.id}`)
+        }catch(err){
+            res.send(err)
+        }
+    },
+    delete: async (req, res) => {
+        try{
+            await User.findOneAndRemove(req.params.id);
+            await Pet.remove({_id: {$in: deletedUser.pets}});
+            res.redirect('/auth');
         }catch(err){
             res.send(err)
         }
