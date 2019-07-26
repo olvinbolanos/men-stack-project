@@ -7,6 +7,7 @@ const app = express();
 require ('./db/db');
 
 const userRoutes = require('./routes/userRoutes');
+const dogRoutes = require('./routes/dogroutes')
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(methodOverride('_method'));
@@ -16,6 +17,7 @@ app.use(session({
   saveUninitialized: false
 }));
 app.use('/users', userRoutes);
+app.use('/dogs', dogRoutes)
 // USE ROUTE HERE
 
 app.listen(3000, () => {
