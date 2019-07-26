@@ -7,7 +7,7 @@ const dogController = {
         try {
             const Doggy = await Dog.find({})
     
-            res.render('dog.ejs', {
+            res.render('dog/index.ejs', {
                 dogs : Doggy
             })
     
@@ -15,24 +15,24 @@ const dogController = {
             res.send(err)
         }
     },
+    newPerrito: async (req, res, next) => {
+      try {
+        res.send('Hello')
+      } catch (err) {
+        next(err)
+      }
+    },
     create: async (req, res) => {
         console.log(req.body)
         try {
-          const newDog = Dog.create(req.body)
+          const newDog = await Dog.create(req.body)
 
-          res.redirect('/dogs')
+          res.redirect('/dog')
 
 
         } catch (err) {
             res.send(err)
         }
-    },
-    newPerrito: async (req, res) => {
-      try {
-        res.render('new.ejs')
-      } catch (err) {
-        res.send(err)
-      }
     }
 } 
 
