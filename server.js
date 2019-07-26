@@ -7,6 +7,8 @@ const app = express();
 require ('./db/db');
 
 const userRoutes = require('./routes/userRoutes');
+const dogRoutes = require('./routes/dogroutes');
+const authRoutes = require('./routes/authRoutes');
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(methodOverride('_method'));
@@ -16,8 +18,13 @@ app.use(session({
   saveUninitialized: false
 }));
 app.use('/users', userRoutes);
-// USE ROUTE HERE
+app.use('/dogs', dogRoutes)
+app.use('/auth', authRoutes);
+
+app.get('/', (req, res) => {
+  res.render('index.ejs');
+});
 
 app.listen(3000, () => {
   console.log("Server is Up & Listening on Port 3000!");
-})
+});
