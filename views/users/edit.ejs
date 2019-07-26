@@ -1,0 +1,27 @@
+<%-include('../partials/header')%>
+    <header>
+        <h1>Hello <%=user.name%>, Edit Your Info Below</h1>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="/dogs">Home</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <h2>Account Details:</h2>
+            <form action="/users/<%=user._id%>?_method=PUT" method="post">
+                <input type="text" name="name" value="<%=user.name%>"/><br/>
+                <input type="text" name="username" value="<%=user.username%>"/><br/>
+                <input type="email" name="email" value="<%=user.email%>"/><br/>
+                <input type="text" name="phone" value="<%=user.phone%>"/><br/>
+                <input type="password" name="phone" value="<%=user.password%>"/><br/>
+                <input type="submit" value="Update Account"/>
+            </form>
+            <section>
+                <form action="/users/<%=user._id%>?_method=DELETE" method="post">
+                    <input type="submit" value="Delete Author"/>
+                </form>
+            </section>
+<%-include('../partials/footer')%>
