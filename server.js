@@ -18,6 +18,10 @@ app.use(session({
 app.use('/users', userRoutes);
 // USE ROUTE HERE
 
+app.get('/', (req, res) => {
+  res.render('index.ejs');
+});
+
 app.listen(3000, () => {
   console.log("Server is Up & Listening on Port 3000!");
-})
+});
