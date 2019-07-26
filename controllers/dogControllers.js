@@ -14,8 +14,8 @@ const dogController = {
         } catch (err) {
             res.send(err)
         }
-    },
-    
+    }
+
 } 
 
-module.exports = ;
+module.exports = dogController;
