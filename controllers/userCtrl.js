@@ -15,7 +15,7 @@ const userController = {
     },
     edit: async (req, res) => {
         try{
-            const foundUsers = await User.findById(req.params.id);
+            const foundUser = await User.findById(req.params.id);
             res.render('users/edit.ejs', {
                 user: foundUser
             })
