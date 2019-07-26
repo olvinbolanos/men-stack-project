@@ -30,6 +30,15 @@ const userController = {
         }catch(err){
             res.send(err)
         }
+    },
+    delete: async (req, res) => {
+        try{
+            await User.findOneAndRemove(req.params.id);
+            await Pet.remove({_id: {$in: deletedUser.pets}});
+            res.redirect('/auth');
+        }catch(err){
+            res.send(err)
+        }
     }
 
 }
