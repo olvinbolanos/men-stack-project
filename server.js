@@ -1,0 +1,22 @@
+const express = require('express');
+const bodyParser = require('body-parser');
+const methodOverride = require('method-override')
+const session = require('express-session');
+const app = express();
+
+require ('./db/db');
+
+// add ROUTES HERE
+
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(methodOverride('_method'));
+app.use(session({
+  secret: 'This Is A Secret String',
+  resave: false,
+  saveUninitialized: false
+}));
+// USE ROUTE HERE
+
+app.listen(3000, () => {
+  console.log("Server is Up & Listening on Port 3000!");
+})
