@@ -1,5 +1,40 @@
-<%- include '../partials/header.ejs' %>
+  <%- include ../partials/header %>
+<section>
+  <section id="homeBase">
+      <header>
+        <h1>Hello Puppy Index Page</h1>
+        <h2>My Dog Info</h2>
+        <ul>
+        <% for (let i = 0; i < dogs.length; i++) {%>
 
+            <li><%= dogs[i].breed %></li>
+            <li><%= dogs[i].age %></li>
+            <li><%= dogs[i].sex %></li>
+            <li>
+                <% if (dogs[i].isHouseBroken  === true) {%>
+                    <%= dogs[i].name %> has been house trained.
+                    <% } else {%> 
+                        <%= dogs[i].name %> has not been house trained.
+                        <% } %> 
+                    </li>
+                    <li><%= dogs[i].location %></li>
+                </ul>
+                <p><%= dogs[i].description %></p>
+        <% } %>
+      </header>
+  </section>
+    <article>
+        <!-- This will be where the picture will be stored inside -->
+        <!-- It will have the location, dog's name, and love's treat's in separate div's -->
+        <div id="grid">
+            <div class="box a"></div>
+            <div class="box b"></div>
+            <div class="box c"></div>
+            <div class="box d"></div>
+        </div>
+    </article>
+  </section>
 
+  <%- include ../partials/footer %>
+  
 
-<%- include '../footer.ejs' %>
