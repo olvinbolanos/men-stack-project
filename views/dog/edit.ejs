@@ -1,0 +1,39 @@
+<%- include ../partials/header %>
+  <!-- Your name will be inserted in heading  -->
+<h1>Welcome to your edit page</h1>
+<form method="POST" action="/dog/<%=dog._id%>?_method=PUT" >
+    <label>Name:</label></br>
+    <input type="text" name="name"  value="<%=dog.name%>"required/></br>
+    <label>Sex:</label></br>
+    <select id="dog-sex" name="sex">
+    <option value="">--Please choose an option--</option>
+    <option value="Male"
+      <% if (dog.sex === 'Male') {%>
+        selected
+        <% } %>
+      >Male</option>
+    <option value="Female"
+        <%if (dog.sex === "Female") {%>
+            selected
+        <% } %>
+        >Female</option> 
+    </select></br>
+    <label>Is it House Trained</label>
+    <input type="checkbox" name="isHouseBroken" 
+        <% if (dog.isHouseBroken === true) {%>
+            checked
+        <% } %>
+    /></br>
+    <label>Breed:</label></br>
+    <input type="text" name="breed" value="<%=dog.breed%>"/></br>
+    <label>Age:</label></br>
+    <input type="number" name="age" max="15" min="0" value="<%= dog.age %>"/></br>
+    <label>Location:</label></br>
+    <textarea type="text" name="location" value="<%=dog.location%>"><%=dog.location%></textarea></br>
+    <label>Description:</label></br>
+    <textarea type="text" maxlength="100" name="description"><%=dog.description%></textarea></br>
+    <!-- edit button -->
+    <input type="submit" value="Edig Dog Profile" />
+</form>
+
+<%- include ../partials/footer %>

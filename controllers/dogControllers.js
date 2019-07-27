@@ -15,7 +15,7 @@ const dogController = {
             res.send(err)
         }
     },
-    newPerrito: async (req, res, next) => {
+    makePerrito: async (req, res, next) => {
         try {
             res.render('dog/new.ejs');
         } catch(err) {
@@ -38,10 +38,40 @@ const dogController = {
     },
     showOne: async (req, res) => {
         try {
-            const foundDog = Dog.findById(req.params.id)
+            const foundDog = await Dog.findById(req.params.id)
             res.render('dog/show.ejs', {
                 dog : foundDog
             })
+        } catch (err) {
+            res.send(err)
+        }
+    },
+    editOne: async (req, res) => {
+        try {
+            
+            const foundDog = await Dog.findById(req.params.id)
+
+            console.log(foundDog, '<-- in edit button')
+            res.render('dog/edit.ejs', {
+                dog : foundDog
+            })
+        } catch (err) {
+            throw(err)
+        }
+    },
+    update: async (req, res) => {
+        console.log(req.body, '<-- update one')
+        try {
+            if(req.body.isHouseBroken === 'on'){
+                req.body.isHouseBroken = true;
+              } else {
+                req.body.isHouseBroken = false;
+              }
+              
+            const updateOne = await Dog.findByIdAndUpdate(req.params.id, req.body)
+            
+
+            res.redirect('/dog')
         } catch (err) {
             res.send(err)
         }
