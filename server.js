@@ -18,7 +18,7 @@ app.use(session({
   saveUninitialized: false
 }));
 app.use('/users', userRoutes);
-app.use('/dogs', dogRoutes)
+app.use('/dog', dogRoutes)
 app.use('/auth', authRoutes);
 
 app.get('/', (req, res) => {

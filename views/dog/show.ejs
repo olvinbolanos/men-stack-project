@@ -1,0 +1,19 @@
+<%- include ../partials/header %>
+
+<h1>Show Page for FurPet</h1>
+<section class="showGrid">
+    <div class="h" id="middlePTag">    
+        <p><span id="name">My dog <%= dog.name %> is wonderful and deserving of a new home.</p>
+    </div>
+    <div id="imgWrapper" class="i">
+        <img src="#" alt="<%= dog.name %>" />
+    </div>
+    <div id="square" class="j">
+        <% if (dog.isHouseBroken === true ) {%>
+            <span>This dog has been well potty.</span>
+        <% } else {%>
+                <span>This dog needs to be potty trained.</span>
+            <% } %>
+    </div>
+</section>
+<%- include ../partials/footer %>

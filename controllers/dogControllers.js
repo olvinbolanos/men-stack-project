@@ -7,15 +7,45 @@ const dogController = {
         try {
             const Doggy = await Dog.find({})
     
-            res.render('dogs/index.ejs', {
+            res.render('dog/index.ejs', {
                 dogs : Doggy
             })
     
         } catch (err) {
             res.send(err)
         }
+    },
+    newPerrito: async (req, res, next) => {
+        try {
+            res.render('dog/new.ejs');
+        } catch(err) {
+          res.send(err);
+        }
+      },
+    newDog: async (req, res) => {
+        if ( req.body.isHouseBroken === 'on') {
+            req.body.isHouseBroken = true
+        } else {
+            req.body.isHouseBroken = false
+        }
+        console.log(req.body)
+        try {
+          const newDog = await Dog.create(req.body)
+          res.redirect('/dog')
+        } catch (err) {
+            res.send(err)
+        }
+    },
+    showOne: async (req, res) => {
+        try {
+            const foundDog = Dog.findById(req.params.id)
+            res.render('dog/show.ejs', {
+                dog : foundDog
+            })
+        } catch (err) {
+            res.send(err)
+        }
     }
-
 } 
 
 module.exports = dogController;
