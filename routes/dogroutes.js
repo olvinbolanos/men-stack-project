@@ -7,5 +7,5 @@ router.get('/new', dogController.makePerrito)
 router.post('/', dogController.newDog)
 router.get('/:id', dogController.showOne)
 router.get('/:id/edit', dogController.editOne)
-
+router.put('/:id', dogController.update)
 module.exports = router;
