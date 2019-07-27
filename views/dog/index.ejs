@@ -7,19 +7,20 @@
         <ul>
         <% for (let i = 0; i < dogs.length; i++) {%>
 
-            <li><%= dogs[i].breed %></li>
-            <li><%= dogs[i].age %></li>
-            <li><%= dogs[i].sex %></li>
-            <li>
+            <li>Breed: <%= dogs[i].breed %></li>
+            <li>Age: <%= dogs[i].age %></li>
+            <li>Sex: <%= dogs[i].sex %></li>
+            <li>House:
                 <% if (dogs[i].isHouseBroken  === true) {%>
                     <%= dogs[i].name %> has been house trained.
                     <% } else {%> 
                         <%= dogs[i].name %> has not been house trained.
                         <% } %> 
                     </li>
-                    <li><%= dogs[i].location %></li>
+                    <li><span>Location: </span><%= dogs[i].location %></li>
                 </ul>
-                <p><%= dogs[i].description %></p>
+                
+                <p><span></span>Description</span></br><%= dogs[i].description %></p>
               </header>
             </section>
             <article>
@@ -36,6 +37,7 @@
                 <div class="box d"></div>
               </div>
             </article>
+            <a href="/dog/<%=dogs[i]._id %>/edit">Edit Page</a></br>
           <% } %>
           </section>
   <a href="/dog/new">Create a New Dog</a>
