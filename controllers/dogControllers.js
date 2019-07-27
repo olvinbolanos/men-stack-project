@@ -31,10 +31,17 @@ const dogController = {
         console.log(req.body)
         try {
           const newDog = await Dog.create(req.body)
-
           res.redirect('/dog')
-
-
+        } catch (err) {
+            res.send(err)
+        }
+    },
+    showOne: async (req, res) => {
+        try {
+            const foundDog = Dog.findById(req.params.id)
+            res.render('dog/show.ejs', {
+                dog : foundDog
+            })
         } catch (err) {
             res.send(err)
         }
