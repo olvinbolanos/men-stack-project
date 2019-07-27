@@ -25,7 +25,7 @@ const authController = {
           req.session.username = foundUser.username;
           req.session.logged = true;
           req.session.message = 'Welcome Back!';
-          res.redirect('/dogs');
+          res.redirect('/dog');
         } else {
           req.sessions.message = 'Incorrect Username or Password'
           res.redirect('/');
@@ -47,7 +47,7 @@ const authController = {
       req.session.userId = createdUser._id;
       req.session.username = createdUser.username;
       req.session.logged = true;
-      res.redirect('/dogs');
+      res.redirect('/dog');
       console.log(createdUser); // REMOVE BEFORE PRESENTATION
     } catch(err) {
       res.send(err);
