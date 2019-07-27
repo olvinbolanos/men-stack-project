@@ -59,16 +59,23 @@ const dogController = {
             throw(err)
         }
     },
-    updateOne: async (req, res) => {
+    update: async (req, res) => {
+        console.log(req.body, '<-- update one')
         try {
-            // console.log(req.body)
+            if(req.body.isHouseBroken === 'on'){
+                req.body.isHouseBroken = true;
+              } else {
+                req.body.isHouseBroken = false;
+              }
+              
+            const updateOne = await Dog.findByIdAndUpdate(req.params.id, req.body)
+            
 
+            res.redirect('/dog')
         } catch (err) {
             res.send(err)
         }
-        // const updateDog = Dog.findByIdAndUpdate(req.params.id)
     }
-
 } 
 
 module.exports = dogController;
