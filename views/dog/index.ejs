@@ -1,23 +1,28 @@
   <%- include ../partials/header %>
+    <%- include ../partials/head %>
 <section>
   <section id="homeBase">
       <header>
-        <h1>Hello Puppy Index Page</h1>
-        <h2>My Dog Info</h2>
+        <h1>Hello, Welcome to FurPets Website</h1>
+        <p>A website designed for helping people adopt a dog or find their pets better home</p>
+        <h2></h2>
+        
         <ul>
-        <% for (let i = 0; i < dogs.length; i++) {%>
-
-            <li>Breed: <%= dogs[i].breed %></li>
-            <li>Age: <%= dogs[i].age %></li>
-            <li>Sex: <%= dogs[i].sex %></li>
-            <li>House:
+            
+              
+              <% for (let i = 0; i < dogs.length; i++) {%>
+              
+              <li>Breed: <%= dogs[i].breed %></li>
+              <li>Age: <%= dogs[i].age %></li>
+              <li>Sex: <%= dogs[i].sex %></li>
+              <li>House:
                 <% if (dogs[i].isHouseBroken  === true) {%>
-                    <%= dogs[i].name %> has been house trained.
-                    <% } else {%> 
-                        <%= dogs[i].name %> has not been house trained.
-                        <% } %> 
-                    </li>
-                    <li><span>Location: </span><%= dogs[i].location %></li>
+                  <%= dogs[i].name %> has been house trained.
+                  <% } else {%> 
+                    <%= dogs[i].name %> has not been house trained.
+                    <% } %> 
+                  </li>
+                  <li><span>Location: </span><%= dogs[i].location %></li>
                 </ul>
                 
                 <p><span></span>Description</span></br><%= dogs[i].description %></p>
@@ -37,8 +42,8 @@
                 <div class="box d"></div>
               </div>
             </article>
-            <a href="/dog/<%=dogs[i]._id %>/edit">Edit Page</a></br>
-          <% } %>
+            
+          <% } %> 
           </section>
   <a href="/dog/new">Create a New Dog</a>
 
