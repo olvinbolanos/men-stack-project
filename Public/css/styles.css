@@ -1,0 +1,166 @@
+body {
+    font-family: Arial;
+}
+/**** Start of nav bar ****/
+nav {
+    height: 41px;
+}
+
+nav ul{
+    margin: 0;
+}
+
+nav, ul.submenu {
+    background: #35f;
+    border-radius: 5px;
+    padding: 0;
+}
+
+nav ul li {
+    display: block;
+    width: 150px;
+    text-align: center;
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 10px; 
+}
+
+nav a:hover {
+    color: #fff;
+    text-shadow: 3px 4px 2px black;
+    opacity: .3;
+}
+
+nav ul.submenu {
+    position: fixed;
+    overflow: hidden;
+    height: 0;
+    border-radius: 0 0 5px 5px;
+    overflow: hidden;
+    height: 0;
+    z-index: 99998;
+}
+
+nav ul.submenu li {
+    float: none;
+    text-align: left;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    opacity: .5;
+   
+}
+
+/***** for the drop-down part ******/
+ nav ul li {
+    transition: .3s all linear;
+    z-index: 1000;
+}
+
+nav ul li:hover ul.submenu {
+    height: 126px;
+    z-index: 1000;
+} 
+
+header  p, h1, h2 {
+    text-align: center;
+}
+/**** navBar  ****/
+
+section {
+    z-index: 30;
+}
+
+/*** nav media query ****/
+
+
+@media screen and (max-width:660px) {
+            
+    nav ul li {
+        display: block;
+        width: 120px;
+        text-align: center;
+        float: left;
+        margin: 0;
+        padding: 0;
+            
+    }
+}
+
+@media screen and (max-width:535px) {
+    nav ul{
+        display: flex;
+        flex-flow: column;
+        -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        color: #fff;
+        padding: 0;
+        font-size: 1.25rem;
+        font-weight: 400;
+        letter-spacing: -.25px;
+        letter-spacing: -.01562rem;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 95%;
+        height: 100%;
+        overflow-y: auto;
+        background: #15f;
+        z-index: 100000;
+      }
+      nav, ul.submenu {
+        background: white;
+        color: blue;
+        border-radius: 5px;
+        padding: 0;
+        right: 0;
+        left: auto;
+    }
+
+    nav a {
+        color: blue;
+    }
+
+    nav a:hover {
+        color: black;
+    }
+    
+    nav ul li {
+        display: flex;
+        justify-content: center;
+    }
+    
+    
+    nav ul.submenu {
+        position: fixed;
+        overflow: hidden;
+        height: 0;
+        border-radius: 0 0 5px 5px;
+        
+        z-index: 99998;
+    }
+
+    nav ul:hover {
+     right: 0%;
+    }
+    nav ul  {
+        transition: 1s all linear;
+        z-index: 1000;
+    }
+
+    section {
+        text-align: center;
+        position: relative;
+        margin-left: 10px;
+    }
+}
+
+/**** end of nav media query ****/
