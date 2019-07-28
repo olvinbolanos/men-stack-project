@@ -1,6 +1,6 @@
-const express = require('express')
-const router = express.Router()
 const Dog = require('../models/dog')
+const User = require('../models/user');
+
 
 const dogController = {
     find: async (req, res) => {
@@ -69,13 +69,14 @@ const dogController = {
               }
               
             const updateOne = await Dog.findByIdAndUpdate(req.params.id, req.body)
-            
-
+    
             res.redirect('/dog')
         } catch (err) {
             res.send(err)
         }
     }
 } 
+
+
 
 module.exports = dogController;
