@@ -6,9 +6,10 @@ const dogController = {
     find: async (req, res) => {
         try {
             const Doggy = await Dog.find({})
-    
+            const User = await User.find({})
             res.render('dog/index.ejs', {
-                dogs : Doggy
+                dogs : Doggy,
+                users : User
             })
     
         } catch (err) {

@@ -8,10 +8,7 @@
         <h2></h2>
         
         <ul>
-            
-              
               <% for (let i = 0; i < dogs.length; i++) {%>
-              
               <li>Breed: <%= dogs[i].breed %></li>
               <li>Age: <%= dogs[i].age %></li>
               <li>Sex: <%= dogs[i].sex %></li>
@@ -44,7 +41,17 @@
             </article>
             
           <% } %> 
-          </section>
+        </section>
+
+      <section>
+        <ul>
+        <% for (let j = 0; j < users.length; j++) {%>
+          <h1>Contact Information</h1>
+          <li>Owners name: <span><%=users[j].name%></span> </li>
+          
+          <% } %>
+        </ul>
+      </section>
   <a href="/dog/new">Create a New Dog</a>
 
   <%- include ../partials/footer %>

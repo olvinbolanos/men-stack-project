@@ -4,8 +4,6 @@ const methodOverride = require('method-override')
 const session = require('express-session');
 const app = express();
 
-
-
 require ('./db/db');
 
 const userRoutes = require('./routes/userRoutes');
