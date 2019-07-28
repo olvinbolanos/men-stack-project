@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const User = require('../models/user');
+const Dog = require('../models/dog')
 const bcrypt = require('bcryptjs');
 
 const authController = {
