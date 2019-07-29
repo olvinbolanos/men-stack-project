@@ -6,14 +6,18 @@ const bcrypt = require('bcryptjs');
 const authController = {
   loginPage: async (req, res) => {
     try {
-        res.render('auth/login.ejs');
+        res.render('auth/login.ejs', {
+          isLogged: req.session.logged
+        });
     } catch(err) {
       res.send(err);
     }
   },
   newRegistrationPage: async (req, res) => {
     try {
-      res.render('auth/new.ejs');
+      res.render('auth/new.ejs', {
+        isLogged: req.session.logged
+      });
     } catch(err) {
       res.send(err);
     }
@@ -50,11 +54,18 @@ const authController = {
       req.session.username = createdUser.username;
       req.session.logged = true;
       res.redirect('/dog')
-      console.log(createdUser); // REMOVE BEFORE PRESENTATION
     } catch(err) {
       res.send(err);
     }
-  }
+  },
+ logoutSession: async (req, res) => {
+   try {
+    req.session.destroy();
+    res.redirect('/');
+   } catch(err) {
+     res.send(err);
+   }
+ }
 }
 
 module.exports = authController;

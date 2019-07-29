@@ -1,4 +1,9 @@
 <%-include('../partials/header')%>
+  <%if(!isLogged) {%>
+    <%- include ../partials/head %>
+  <%} else {%>
+    <%-include('../partials/navlogged')%>
+  <%}%>
 <body class='account-body'>
     <div class='account-container'>
         <main>
@@ -26,7 +31,7 @@
                         <div class='col s6'><button class="waves-effect waves-light btn">Update Account</button></div>
                 </form>
             <section>
-                <form action="/user/<%=user._id%>?_method=DELETE" method="post">
+                <form action="/users/<%=user._id%>?_method=DELETE" method="post">
                     <div class='col s6'><button class="waves-effect waves-light btn">Delete Account</button></div>
                     </div>
             </section>

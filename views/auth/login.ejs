@@ -1,4 +1,9 @@
 <%-include('../partials/header.ejs')%>
+  <%if(!isLogged) {%>
+    <%- include ../partials/head %>
+  <%} else {%>
+    <%-include('../partials/navlogged')%>
+  <%}%>
 <body class='account-body'>
   <div class='account-container'>
     <main>
