@@ -20,18 +20,18 @@
                 </div>
                 <div class="section">
                     <h5>Pets:</h5>
-                        <section>
-                            <a href="/dogs/new"><button class="waves-effect waves-light btn">Add a pet for adoption</button></a>
-                        </section>
                         <div class='row'>
                             <% for(let i = 0; i < user.pets.length; i++){ %>
                                 <div class='col s6'><a href="/users/<%=user.pets[i]._id%>"><%=user.pets[i].name%></a></div>
                             <% } %>
                         </div>
+                        <section>
+                            <a href="/dog/new"><button class="waves-effect waves-light btn">Add a pet for adoption</button></a>
+                        </section>
                 </div>
                 <div class="account-button">
                     <a href="/users/<%=user._id%>/edit"><button class="waves-effect waves-light btn">Edit Account</button></a>
-                    <a href="/dogs"><button class="waves-effect waves-light btn">Home</button></a>
+                    <a href="/dog"><button class="waves-effect waves-light btn">Home</button></a>
                 </section>
             </main>
     </div>
