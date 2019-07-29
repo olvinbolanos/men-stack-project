@@ -5,37 +5,38 @@ const User = require('../models/user');
 const dogController = {
     find: async (req, res) => {
         try {
-            const Doggy = await Dog.find({})
-            const People = await User.find({})
-            if(!req.session.logged) {
-                res.render('dog/index.ejs', {
+            const Doggy = await Dog.find({});
+            const People = await User.find({});
+            res.render('dog/index.ejs', {
                     dogs : Doggy,
                     users : People,
-                    user: '',
-                    message: 'testing'
-                })
+                    user: req.session.username,
+                    message: req.session.message,
+                    isLogged: req.session.logged
+                });
+        } catch (err) {
+            res.send(err);
+        }
+    },
+    makePerrito: async (req, res, next) => {
+        try{
+            const Doggy = await Dog.find({});
+            const People = await User.find({});
+            if(!req.session.logged) {
+                req.session.message = 'Please Login To Post.'
+                res.redirect('/dog')
             } else {
-                res.render('dog/index.ejs', {
+                res.render('dog/new.ejs', {
                     dogs : Doggy,
                     users : People,
                     user: req.session.username,
                     message: req.session.message
-                })
+                });
             }
         } catch (err) {
-            res.send(err)
-        }
+            res.send(err);
+        }  
     },
-    makePerrito: async (req, res, next) => {
-        try {
-            const messages = ''
-            res.render('dog/new.ejs', {
-                message : messages
-            })
-        } catch(err) {
-          res.send(err);
-        }
-      },
     newDog: async (req, res) => {
         if ( req.body.isHouseBroken === 'on') {
             req.body.isHouseBroken = true
@@ -44,14 +45,14 @@ const dogController = {
         }
         console.log(req.body)
         try {
-          const newDog = await Dog.create(req.body)
-          const user = await User.findOne({'username': req.body.username})
-          const messages = 'Could not find that username'
-          if (!user) {
-            res.render('dog/new.ejs', {
-                message : messages
-            })
-          } else {
+            const user = await User.findOne({'username': req.body.username})
+            const messages = 'Could not find that username'
+            if (!user) {
+                res.render('dog/new.ejs', {
+                    message : messages
+                })
+            } else {
+              const newDog = await Dog.create(req.body)
               user.pets.push(newDog)
               user.save((err, savedPet) => {
                   console.log(savedPet)

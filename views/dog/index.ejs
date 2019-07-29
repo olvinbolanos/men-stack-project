@@ -1,5 +1,9 @@
   <%- include ../partials/header %>
+  <%if(!isLogged) {%>
     <%- include ../partials/head %>
+  <%} else {%>
+    <%-include('../partials/navlogged')%>
+  <%}%>
   <section>
     <header>
         <h1>Hello, Welcome to FurPets Website</h1>
