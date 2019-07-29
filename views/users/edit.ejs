@@ -3,7 +3,7 @@
     <div class='account-container'>
         <main>
             <h5>Edit Account:</h5>
-                <form action="/users/<%=user._id%>?_method=PUT" method="post">
+                <form action="/user/<%=user._id%>?_method=PUT" method="post">
                     <div class='row'>
                         <div class='col s6'>Name:</label></div>
                         <div class='col s6'>Location:</div>
@@ -26,7 +26,7 @@
                         <div class='col s6'><button class="waves-effect waves-light btn">Update Account</button></div>
                 </form>
             <section>
-                <form action="/users/<%=user._id%>?_method=DELETE" method="post">
+                <form action="/user/<%=user._id%>?_method=DELETE" method="post">
                     <div class='col s6'><button class="waves-effect waves-light btn">Delete Account</button></div>
                     </div>
             </section>
@@ -35,7 +35,7 @@
             </div>    
                     <% for(let i = 0; i < user.pets.length; i++){ %>
                         <div class="row">
-                            <div class='col s6'><a href="/users/<%=user.pets[i]._id%>"><%=user.pets[i].name%></a></div>
+                            <div class='col s6'><a href="/user/<%=user.pets[i]._id%>"><%=user.pets[i].name%></a></div>
                             <div class='col s6'><button class="waves-effect waves-light btn">Delete Pet</button></div>
                         </div>
                     <% } %>
