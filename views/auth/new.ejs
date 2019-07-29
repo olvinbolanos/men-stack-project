@@ -1,15 +1,32 @@
 <%-include('../partials/header.ejs')%>
-<header>
-  <h1>Create An Account</h1>
-</header>
-<main>
-  <form action='/auth/register' method='POST'>
-    <label>Username:</label><input type='text' name='username'/><br/>
-    <label>Name:</label><input type='text' name='name'/><br/>
-    <label>Email:</label><input type='text' name='email'/><br/>
-    <label>Phone Number:</label><input type='text' name='phone'/><br/>
-    <label>Password:</label><input type='text' name='password'/><br/>
-    <input type='submit' value='Sign Up'/>
-  </form>
-</main>
+<body class='account-body'>
+  <div class='account-container'>
+    <main>
+        <h5>Create An Account</h5>
+        <form action='/auth/register' method='POST'>
+      <div class="row">
+          <div class="input-field col s6"><textarea id="textarea1" class="materialize-textarea" type='text' name='username'></textarea>
+          <label for="textarea1">Username</label></div>
+          <div class='input-field col s6'><textarea id="textarea1" class="materialize-textarea" type='text' name='name'></textarea>
+          <label for="textarea1">Name</label></div>
+      </div>
+      <div class="row">
+          <div class="input-field col s6"><textarea id="textarea1" class="materialize-textarea" type='text' name='location'></textarea>
+          <label for="textarea1">Location</label></div>
+          <div class='input-field col s6'><textarea id="textarea1" class="materialize-textarea" type='email' name='email'></textarea>
+          <label for="textarea1">Email</label></div>
+      </div>
+      <div class="row">
+          <div class="input-field col s6"><textarea id="textarea1" class="materialize-textarea" type='text' name='phone'></textarea>
+          <label for="textarea1">Phone</label></div>
+          <div class='input-field col s6'><textarea id="textarea1" class="materialize-textarea" type='password' name='password'></textarea>
+          <label for="textarea1">Password</label></div>
+      </div>
+      <div class="row">
+          <button class="waves-effect waves-light btn" type='submit'>Sign Up</div>
+      </div>
+        </form>
+    </main>
+  </div>
+</body>
 <%-include('../partials/footer.ejs')%>
