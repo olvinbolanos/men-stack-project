@@ -1,51 +1,61 @@
   <%- include ../partials/header %>
     <%- include ../partials/head %>
-<section>
-  <section id="homeBase">
-      <header>
+  <section>
+    <header>
         <h1>Hello, Welcome to FurPets Website</h1>
         <p>A website designed for helping people adopt a dog or find their pets better home</p>
-        <h2></h2>
-        
+          
+    <section>
+
+    <section id="homeBase">
         <ul>
-            
+          <% for (let i = 0; i < dogs.length; i++) {%>
+          <li>Dog name:<a href="/dog/<%= dogs[i]._id %>"><%= dogs[i].name %></a></li>
+          <li>Breed: <%= dogs[i].breed %></li>
+          <li>Age: <%= dogs[i].age %></li>
+          <li>Sex: <%= dogs[i].sex %></li>
+          <li>House trained:
+            <% if (dogs[i].isHouseBroken  === true) {%>
+              <%= dogs[i].name %> has been house trained.
+              <% } else {%> 
+                <%= dogs[i].name %> has not been house trained.
+              <% } %> 
+              </li>
               
-              <% for (let i = 0; i < dogs.length; i++) {%>
-              
-              <li>Breed: <%= dogs[i].breed %></li>
-              <li>Age: <%= dogs[i].age %></li>
-              <li>Sex: <%= dogs[i].sex %></li>
-              <li>House:
-                <% if (dogs[i].isHouseBroken  === true) {%>
-                  <%= dogs[i].name %> has been house trained.
-                  <% } else {%> 
-                    <%= dogs[i].name %> has not been house trained.
-                    <% } %> 
-                  </li>
-                  <li><span>Location: </span><%= dogs[i].location %></li>
-                </ul>
+              <li><span>Location:</br></span><%= dogs[i].location %></li>
+              <li><span>Description</span></br><%= dogs[i].description %></li>
+            </ul>
+        </header>
+      </section>
+        <article>
+          <!-- This will be where the picture will be stored inside -->
+          <!-- It will have the location, dog's name, and love's treat's in separate div's -->
                 
-                <p><span></span>Description</span></br><%= dogs[i].description %></p>
-              </header>
-            </section>
-            <article>
-              <!-- This will be where the picture will be stored inside -->
-              <!-- It will have the location, dog's name, and love's treat's in separate div's -->
-              
-              <div id="grid">
-                <div class="box a">
-                  
-                  <p><span>View <a href="/dog/<%= dogs[i]._id%>"><%= dogs[i].name %>'s</a>  personal page.</span></p>
-                </div>
-                <div class="box b"></div>
-                <div class="box c"></div>
-                <div class="box d"></div>
-              </div>
-            </article>
-            
+          <div id="grid">
+            <div class="box a">
+            </div>
+            <!-- dog picture inside of div -->
+            <div class="box b"></div>
+            <!-- dog love's treats -->
+            <div class="box c"></div>
+            <!-- dog personal preference, IDK -->
+            <div class="box d"></div>
+          </div>
+        </article>
+        <% } %> 
+    </section>
+
+    <section>
+      <h2>List of Owners that want their pets to find a better home.</h2>
+      <ul>
+        <% for (let k = 0; k < users.length; k++) { %>
+          <!-- This will take the user to other user's dogs page -->
+          <li> <a href="/user/<%= users[k]._id %>"><%= users[k].name %></a></li>
           <% } %> 
-          </section>
-  <a href="/dog/new">Create a New Dog</a>
+        </ul>
+      </section>
+      <a href="/dog/new">Do you want to post your dog for adoption?</a>
+
 
   <%- include ../partials/footer %>
   

@@ -6,10 +6,12 @@ const dogController = {
     find: async (req, res) => {
         try {
             const Doggy = await Dog.find({})
-    
+            const People = await User.find({})
             res.render('dog/index.ejs', {
-                dogs : Doggy
+                dogs : Doggy,
+                users : People
             })
+           
     
         } catch (err) {
             res.send(err)
@@ -17,7 +19,10 @@ const dogController = {
     },
     makePerrito: async (req, res, next) => {
         try {
-            res.render('dog/new.ejs');
+            const messages = ''
+            res.render('dog/new.ejs', {
+                message : messages
+            })
         } catch(err) {
           res.send(err);
         }
@@ -31,17 +36,46 @@ const dogController = {
         console.log(req.body)
         try {
           const newDog = await Dog.create(req.body)
-          res.redirect('/dog')
+          const user = await User.findOne({'username': req.body.username})
+          const messages = 'Could not find that username'
+          if (!user) {
+            res.render('dog/new.ejs', {
+                message : messages
+            })
+          } else {
+              user.pets.push(newDog)
+              user.save((err, savedPet) => {
+                  console.log(savedPet)
+                  res.redirect('/dog')
+              })
+            }
         } catch (err) {
             res.send(err)
         }
     },
-    showOne: async (req, res) => {
+    showOne: (req, res) => {
         try {
-            const foundDog = await Dog.findById(req.params.id)
-            res.render('dog/show.ejs', {
-                dog : foundDog
+            User.findOne({ 'pets': req.params.id})
+            .populate('pets')
+            .exec((err, foundAPet) => {
+                let pet = {}
+
+                for (let i = 0; i < foundAPet.pets.length; i++) {
+                    if (foundAPet.pets[i]._id.toString() === req.params.id.toString()) {
+                      pet = foundAPet.pets[i];
+                      console.log(pet, ' the found pet')
+                    }
+                }
+
+                console.log('===============')
+                console.log(foundAPet, ' <--- in dogs show page')
+                console.log('============')
+                res.render('dog/show.ejs', {
+                    user : foundAPet,
+                    dog : pet
+                })
             })
+            
         } catch (err) {
             res.send(err)
         }
