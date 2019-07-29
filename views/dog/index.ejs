@@ -34,6 +34,7 @@
                 
           <div id="grid">
             <div class="box a">
+              <img src="<%= dogs[i].image %>" alt="<%= dogs[i].name %>" >
             </div>
             <!-- dog picture inside of div -->
             <div class="box b"></div>
@@ -51,7 +52,7 @@
       <ul>
         <% for (let k = 0; k < users.length; k++) { %>
           <!-- This will take the user to other user's dogs page -->
-          <li> <a href="/user/<%= users[k]._id %>"><%= users[k].name %></a></li>
+          <li> <a href="/users/<%= users[k]._id %>"><%= users[k].name %></a></li>
           <% } %> 
         </ul>
       </section>
