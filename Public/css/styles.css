@@ -164,3 +164,67 @@ section {
 }
 
 /**** end of nav media query ****/
+
+/*** image file ***/
+.box ul {
+    list-style: none;
+}
+
+.box ul li {
+    font-size: 1.25rem;
+}
+
+.flexStyle  ul {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-flow: row wrap;
+  list-style: none;
+  height: 100%;
+}
+
+.flexStyle ul li {
+    padding: 30px;
+}
+
+.child {
+  position: relative;   
+  height: 20%;
+  padding: 0;
+  font-size: 1.25rem;
+  top: -55px;
+  left: 5px;
+}
+
+.child p {
+  margin: 0;
+  color: white;
+  text-shadow: 3px 2px 3px black;
+}
+
+/* .moveRight {
+    align-self: flex-start;
+    position: relative;
+    float: right;
+    top: -30px;
+} */
+
+
+
+.box img {
+  width: 245px;
+  height: 245px;
+  border: 3px solid black;
+  box-shadow: 3px 4px 2px black;
+  z-index: 1;
+}
+
+.box ul li:nth-child(2) {
+    position: relative;
+}
+
+.box ul li:nth-child(3) {
+    position: relative;
+    
+    
+}
