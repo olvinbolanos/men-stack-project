@@ -6,19 +6,11 @@
         <p>A website designed for helping people adopt a dog or find their pets better home</p>
           
     <section>
-      <!-- Each owner's pet displayed on the index page -->
-      <ul>
-        <% for (let j = 0; j < users.length; j++) {%>
-        <li>
-          <h1>Contact Information</h1>
-          <p>Owners name: <span><%=users[j].name%></span></p>
-        </li>
-      </ul>
-    </section>
 
     <section id="homeBase">
         <ul>
           <% for (let i = 0; i < dogs.length; i++) {%>
+          <li>Dog name:<a href="/dog/<%= dogs[i]._id %>"><%= dogs[i].name %></a></li>
           <li>Breed: <%= dogs[i].breed %></li>
           <li>Age: <%= dogs[i].age %></li>
           <li>Sex: <%= dogs[i].sex %></li>
@@ -31,10 +23,8 @@
               </li>
               
               <li><span>Location:</br></span><%= dogs[i].location %></li>
-              
               <li><span>Description</span></br><%= dogs[i].description %></li>
             </ul>
-                  
         </header>
       </section>
         <article>
@@ -43,7 +33,6 @@
                 
           <div id="grid">
             <div class="box a">
-              <p><span>View <a href="/dog/<%= dogs[i]._id%>"><%= dogs[i].name %>'s</a>  personal page.</span></p>
             </div>
             <!-- dog picture inside of div -->
             <div class="box b"></div>
@@ -53,8 +42,7 @@
             <div class="box d"></div>
           </div>
         </article>
-      <% } %> 
-    <% } %>
+        <% } %> 
     </section>
 
     <section>
@@ -62,8 +50,7 @@
       <ul>
         <% for (let k = 0; k < users.length; k++) { %>
           <!-- This will take the user to other user's dogs page -->
-          <li> <a href="/user/<%= users[k]._id %>/PersonalPage"><%= users[k].name %></a></li>
-          
+          <li> <a href="/user/<%= users[k]._id %>"><%= users[k].name %></a></li>
           <% } %> 
         </ul>
       </section>

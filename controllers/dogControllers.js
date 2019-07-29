@@ -53,9 +53,9 @@ const dogController = {
             res.send(err)
         }
     },
-    showOne: async (req, res) => {
+    showOne: (req, res) => {
         try {
-            const foundOne = await User.findOne({ 'pets': req.params.id})
+            User.findOne({ 'pets': req.params.id})
             .populate('pets')
             .exec((err, foundAPet) => {
                 let pet = {}
