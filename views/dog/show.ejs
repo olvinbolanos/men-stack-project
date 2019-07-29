@@ -1,6 +1,9 @@
 <%- include ../partials/header %>
- <%- include ../partials/head %>
-
+  <%if(!isLogged) {%>
+    <%- include ../partials/head %>
+  <%} else {%>
+    <%-include('../partials/navlogged')%>
+  <%}%>
 <h1>Show Page for FurPet</h1>
 <section class="showGrid">
     <div class="h" id="middlePTag">    
