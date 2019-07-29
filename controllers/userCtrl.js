@@ -15,7 +15,7 @@ const userController = {
     },
     details: async (req, res) => {
         try{
-            const foundUser = await User.findById(req.params.id);
+            const foundUser = await User.findById(req.params.id).populate('pets');
             res.render('users/show.ejs', {
                 user: foundUser
             })
