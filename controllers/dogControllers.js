@@ -55,10 +55,27 @@ const dogController = {
     },
     showOne: async (req, res) => {
         try {
-            const foundDog = await Dog.findById(req.params.id)
-            res.render('dog/show.ejs', {
-                dog : foundDog
+            const foundOne = await User.findOne({ 'pets': req.params.id})
+            .populate('pets')
+            .exec((err, foundAPet) => {
+                let pet = {}
+
+                for (let i = 0; i < foundAPet.pets.length; i++) {
+                    if (foundAPet.pets[i]._id.toString() === req.params.id.toString()) {
+                      pet = foundAPet.pets[i];
+                      console.log(pet, ' the found pet')
+                    }
+                }
+
+                console.log('===============')
+                console.log(foundAPet, ' <--- in dogs show page')
+                console.log('============')
+                res.render('dog/show.ejs', {
+                    user : foundAPet,
+                    dog : pet
+                })
             })
+            
         } catch (err) {
             res.send(err)
         }
