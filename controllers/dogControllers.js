@@ -7,12 +7,21 @@ const dogController = {
         try {
             const Doggy = await Dog.find({})
             const People = await User.find({})
-            res.render('dog/index.ejs', {
-                dogs : Doggy,
-                users : People
-            })
-           
-    
+            if(!req.session.logged) {
+                res.render('dog/index.ejs', {
+                    dogs : Doggy,
+                    users : People,
+                    user: '',
+                    message: 'testing'
+                })
+            } else {
+                res.render('dog/index.ejs', {
+                    dogs : Doggy,
+                    users : People,
+                    user: req.session.username,
+                    message: req.session.message
+                })
+            }
         } catch (err) {
             res.send(err)
         }
