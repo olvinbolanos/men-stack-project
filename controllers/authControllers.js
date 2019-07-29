@@ -21,14 +21,15 @@ const authController = {
   submitLoginInfo: async (req, res) => {
     try {
       const foundUser = await User.findOne({username: req.body.username});
+      console.log(foundUser, ' this is the user in author controls made')
       if(foundUser){
         if(bcrypt.compareSync(req.body.password, foundUser.password)){
           req.session.username = foundUser.username;
           req.session.logged = true;
           req.session.message = 'Welcome Back!';
-          res.redirect('/dog');
+          res.redirect('/dog')
         } else {
-          req.sessions.message = 'Incorrect Username or Password'
+          req.session.message = 'Incorrect Username or Password'
           res.redirect('/');
         }
       } else {
@@ -48,7 +49,7 @@ const authController = {
       req.session.userId = createdUser._id;
       req.session.username = createdUser.username;
       req.session.logged = true;
-      res.redirect('/dog');
+      res.redirect('/dog')
       console.log(createdUser); // REMOVE BEFORE PRESENTATION
     } catch(err) {
       res.send(err);

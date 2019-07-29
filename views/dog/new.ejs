@@ -1,8 +1,10 @@
 <%- include ../partials/header %>
   <%- include ../partials/head %>
-
+<p><%= message %></p>
 <form action="/dog" method="POST">
-    <label>Name:</label></br>
+    <label>Type in your username:</label></br>
+    <input type="text" name="username" required/></br>
+    <label>Dog's name:</label></br>
     <input type="text" name="name" required/></br>
     <label>Sex:</label></br>
     <select id="dog-sex" name="sex">

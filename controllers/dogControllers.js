@@ -6,11 +6,12 @@ const dogController = {
     find: async (req, res) => {
         try {
             const Doggy = await Dog.find({})
-            const User = await User.find({})
+            const People = await User.find({})
             res.render('dog/index.ejs', {
                 dogs : Doggy,
-                users : User
+                users : People
             })
+           
     
         } catch (err) {
             res.send(err)
@@ -18,7 +19,10 @@ const dogController = {
     },
     makePerrito: async (req, res, next) => {
         try {
-            res.render('dog/new.ejs');
+            const messages = ''
+            res.render('dog/new.ejs', {
+                message : messages
+            })
         } catch(err) {
           res.send(err);
         }
@@ -32,7 +36,19 @@ const dogController = {
         console.log(req.body)
         try {
           const newDog = await Dog.create(req.body)
-          res.redirect('/dog')
+          const user = await User.findOne({'username': req.body.username})
+          const messages = 'Could not find that username'
+          if (!user) {
+            res.render('dog/new.ejs', {
+                message : messages
+            })
+          } else {
+              user.pets.push(newDog)
+              user.save((err, savedPet) => {
+                  console.log(savedPet)
+                  res.redirect('/dog')
+              })
+            }
         } catch (err) {
             res.send(err)
         }
