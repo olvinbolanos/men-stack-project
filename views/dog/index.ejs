@@ -1,13 +1,17 @@
   <%- include ../partials/header %>
+  <%if(!isLogged) {%>
     <%- include ../partials/head %>
+  <%} else {%>
+    <%-include('../partials/navlogged')%>
+  <%}%>
   <section>
     <header>
-        <h1>Hello, Welcome to FurPets Website</h1>
         <p>A website designed for helping people adopt a dog or find their pets better home</p>
         <p>A little quick change</p>
     <section>
 
     <section id="homeBase">
+    <span><%=message%></span>
         </header>
       </section>
         <article>

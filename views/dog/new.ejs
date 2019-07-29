@@ -1,5 +1,9 @@
 <%- include ../partials/header %>
-  <%- include ../partials/head %>
+  <%if(!isLogged) {%>
+    <%- include ../partials/head %>
+  <%} else {%>
+    <%-include('../partials/navlogged')%>
+  <%}%>
 <p><%= message %></p>
 <form action="/dog" method="POST">
     <label>Type in your username:</label></br>
