@@ -118,6 +118,17 @@ const dogController = {
         } catch (err) {
             res.send(err)
         }
+    },
+    deleteDog: async (req, res) => {
+        try{
+            await Dog.findByIdAndRemove(req.params.id);
+            const foundUser = await User.findOne({'dogs': req.params.id});
+            foundUser.dogs.remove(req.params.id);
+            await foundUser.save();
+            res.render(`/users/${req.params.id}/edit`);
+        } catch(err) {
+            res.send(err);
+        }
     }
 } 
 
