@@ -6,14 +6,18 @@ const bcrypt = require('bcryptjs');
 const authController = {
   loginPage: async (req, res) => {
     try {
-        res.render('auth/login.ejs');
+        res.render('auth/login.ejs', {
+          isLogged: req.session.logged
+        });
     } catch(err) {
       res.send(err);
     }
   },
   newRegistrationPage: async (req, res) => {
     try {
-      res.render('auth/new.ejs');
+      res.render('auth/new.ejs', {
+        isLogged: req.session.logged
+      });
     } catch(err) {
       res.send(err);
     }
