@@ -1,32 +1,48 @@
 <%-include('../partials/header')%>
-    <header>
-        <h1>Hello <%=user.name%>, Edit Your Info Below</h1>
-            <nav>
-                <ul>
-                    <li>
-                        <a href="/dogs">Home</a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
+<body class='account-body'>
+    <div class='account-container'>
         <main>
-            <h2>Account Details:</h2>
-            <form action="/users/<%=user._id%>?_method=PUT" method="post">
-                <label>Name:</label><br/>
-                <input type="text" name="name" value="<%=user.name%>"/><br/>
-                <label>Username:</label><br/>
-                <input type="text" name="username" value="<%=user.username%>"/><br/>
-                <label>Email:</label><br/>
-                <input type="email" name="email" value="<%=user.email%>"/><br/>
-                <label>Phone Number:</label><br/>
-                <input type="text" name="phone" value="<%=user.phone%>"/><br/>
-                <label>Password:</label><br/>
-                <input type="password" name="password" value=""/><br/>
-                <input type="submit" value="Update Account"/>
-            </form>
-            <section>
-                <form action="/users/<%=user._id%>?_method=DELETE" method="post">
-                    <input type="submit" value="Delete Author"/>
+            <h5>Edit Account:</h5>
+                <form action="/user/<%=user._id%>?_method=PUT" method="post">
+                    <div class='row'>
+                        <div class='col s6'>Name:</label></div>
+                        <div class='col s6'>Location:</div>
+                        <div class='col s6'><input type="text" name="username" value="<%=user.username%>"/></div>
+                        <div class='col s6'><input type="text" name="location" value="<%=user.location%>"/></div>
+                    </div>
+                    <div class='row'>
+                        <div class='col s6'>Email:</label></div>
+                        <div class='col s6'>Phone Number:</label></div>
+                        <div class='col s6'><input type="email" name="email" value="<%=user.email%>"/></div>
+                        <div class='col s6'><input type="text" name="phone" value="<%=user.phone%>"/></div>
+                    </div>
+                    <div class='row'>
+                        <div class='col s12'>Password:</label></div>
+                    </div>
+                    <div class='row'>
+                        <div class='col s12'><input type="password" name="password" value=""/></div>
+                    </div>
+                    <div class='row'>
+                        <div class='col s6'><button class="waves-effect waves-light btn">Update Account</button></div>
                 </form>
+            <section>
+                <form action="/user/<%=user._id%>?_method=DELETE" method="post">
+                    <div class='col s6'><button class="waves-effect waves-light btn">Delete Account</button></div>
+                    </div>
             </section>
+            <div class="row">
+                <div class='col s12'>Pets:</div>
+            </div>    
+                    <% for(let i = 0; i < user.pets.length; i++){ %>
+                        <div class="row">
+                            <div class='col s6'><a href="/user/<%=user.pets[i]._id%>"><%=user.pets[i].name%></a></div>
+                            <div class='col s6'><button class="waves-effect waves-light btn">Delete Pet</button></div>
+                        </div>
+                    <% } %>
+            </div>
+                </form>
+            </div>
+        </main>
+    </div>
+</body>
 <%-include('../partials/footer')%>

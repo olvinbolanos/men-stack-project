@@ -76,6 +76,50 @@ section {
     z-index: 30;
 }
 
+.account-body {
+    background: rgb(227 227 227);
+}
+
+.account-container {
+    display: flex;
+    justify-content: center;
+    border: .5px solid grey;
+    border-radius: 10px;
+    background: white;
+    margin-top: 50px;
+    margin-left: 250px;
+    margin-right: 250px;
+}
+
+.account-user {
+    border: .5px solid grey;
+    border-radius: 5px;
+    padding-left: 5px;
+    padding-right: 50px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display: inline-block;
+    width: 100%;
+    min-height: 100%;
+}
+
+.account-button {
+    margin-bottom: 5%
+}
+
+#login-account {
+    display: flex;
+    justify-content: center;
+}
+
+.vl {
+    border-left: 1px solid #e0e0e0;
+    height: 510px;
+    position: absolute;
+    left: 50%;
+    margin-left: -3px;
+  }
+
 /*** nav media query ****/
 
 
