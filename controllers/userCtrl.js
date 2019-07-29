@@ -15,7 +15,7 @@ const userController = {
     },
     details: async (req, res) => {
         try{
-            const foundUser = await User.findById(req.params.id);
+            const foundUser = await User.findById(req.params.id).populate('pets');
             res.render('users/show.ejs', {
                 user: foundUser
             })
@@ -25,7 +25,7 @@ const userController = {
     },
     edit: async (req, res) => {
         try{
-            const foundUser = await User.findById(req.params.id);
+            const foundUser = await User.findById(req.params.id).populate('pets');
             res.render('users/edit.ejs', {
                 user: foundUser
             })
@@ -46,7 +46,6 @@ const userController = {
     },
     delete: async (req, res) => {
         try{
-        
             await User.findOneAndRemove(req.params.id);
             await Pet.remove({_id: {$in: deletedUser.pets}});
             res.redirect('/auth');
