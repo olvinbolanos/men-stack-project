@@ -6,6 +6,7 @@ const dogSchema = new mongoose.Schema({
     isHouseBroken : {type: Boolean, optional: true},
     sex : String,
     age : Number,
+    image: String,
     breed : [String],
     location : String
 })
