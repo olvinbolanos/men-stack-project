@@ -1,5 +1,5 @@
 body {
-    font-family: Arial;
+    font-family: "Roboto Slab", Helvetica, serif;
 }
 * {
     text-decoration: none;
@@ -26,6 +26,7 @@ body {
 nav {
     height: 41px;
     background-color: #35f !important;
+    
 }
 
 nav ul{
@@ -97,6 +98,7 @@ section {
     z-index: 30;
 }
 
+/**** styling for user forms ****/
 .account-body {
     background: rgb(227 227 227);
 }
@@ -147,6 +149,10 @@ section {
 
 .user-logged {
     float: right;
+}
+
+.logo {
+    display: inline-block;
 }
 
 /*** nav media query ****/
