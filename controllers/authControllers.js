@@ -25,7 +25,6 @@ const authController = {
   submitLoginInfo: async (req, res) => {
     try {
       const foundUser = await User.findOne({email: req.body.email});
-      console.log(foundUser, ' this is the user in author controls made')
       if(foundUser){
         if(bcrypt.compareSync(req.body.password, foundUser.password)){
           req.session.username = foundUser.username;
