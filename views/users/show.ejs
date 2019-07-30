@@ -27,7 +27,7 @@
                     <h5>Pets:</h5>
                         <div class='row'>
                             <% for(let i = 0; i < user.pets.length; i++){ %>
-                                <div class='col s6'><a href="/users/<%=user.pets[i]._id%>"><%=user.pets[i].name%></a></div>
+                                <div class='col s6'><a href="/dog/<%=user.pets[i]._id%>"><%=user.pets[i].name%></a></div>
                             <% } %>
                         </div>
                         <section>

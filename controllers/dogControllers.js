@@ -118,9 +118,7 @@ const dogController = {
               }
             const updateOne = await Dog.findByIdAndUpdate(req.params.id, req.body)
     
-            res.redirect('/dog', {
-                isLogged: req.session.logged
-            })
+            res.redirect('/dog')
         } catch (err) {
             res.send(err)
         }
