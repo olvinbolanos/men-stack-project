@@ -8,7 +8,7 @@
     <div class="account-container">
       <main>
         <div class="section">
-          <h5>Edit <%=dog.name%>"s Details</h5>
+          <h5>Edit <%=dog.name%>'s Details</h5>
             <form method="POST" action="/dog/<%=dog._id%>?_method=PUT" >
               <div class="row">
                 <div class="col s6"><label>Name:</label></div>
@@ -27,13 +27,22 @@
               </div>
               <div class="row">
                 <div class="col s6"><label>Breed:</label></div>
-                <div class="col s6"><label for="textarea1">Age:</label></div>
+                <div class="col s6"><label>Age:</label></div>
                 <div class="col s6"><input type="text" name="breed" value="<%=dog.breed%>"required/></div>
                 <div class="col s6"><input type="text" name="age" min="0" value="<%=dog.age%>"/></div>
               </div>
               <div class="row">
-                <div class="col s6"><label for="textarea1">Location:</label></div>
-                <div class="col s6">
+                <div class="col s6"><label>Location:</label></div>
+                <div class="col s6"><label>Image:</label></div>
+                <div class="col s6"><input type="text" name="image" value="<%=dog.image%>"required/></div>
+                <div class="col s6"><input type="text" name="location" value="<%=dog.location%>"required/></div>
+              </div>
+              <div class="row">
+                <div class="col s12"><label>Description:</label></div>
+                <div class="col s12"><textarea type="text" maxlength="100" name="description"><%=dog.description%></textarea></div>
+              </div>
+              <div class="row">
+                <div class="col s12">
                   <p>
                     <label for="house-broken">
                       <input id="house-broken" type="checkbox" class="filled-in" name="isHouseBroken" value="<%=dog.isHouseBroken%>"/>
@@ -41,11 +50,6 @@
                     </label>
                   </p>
                 </div>
-                <div class="col s6"><input type="text" name="location" value="<%=dog.location%>"required/></div>
-              </div>
-              <div class="row">
-                <div class="col s12"><label>Description:</label></div>
-                <div class="col s12"><textarea type="text" maxlength="100" name="description"><%=dog.description%></textarea></div>
               </div>
               <div class="row">
                 <div class="col s6"><button class="waves-effect waves-light btn" type="submit">Submit</button></div>
