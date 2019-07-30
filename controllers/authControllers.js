@@ -25,11 +25,11 @@ const authController = {
   submitLoginInfo: async (req, res) => {
     try {
       const foundUser = await User.findOne({email: req.body.email});
-      console.log(foundUser, ' this is the user in author controls made')
       if(foundUser){
         if(bcrypt.compareSync(req.body.password, foundUser.password)){
           req.session.username = foundUser.username;
           req.session.logged = true;
+          req.session.userId = foundUser._id
           req.session.message = `Welcome Back ${foundUser.username}!`;
           res.redirect('/dog')
         } else {
