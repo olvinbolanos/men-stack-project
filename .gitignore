@@ -42,6 +42,9 @@ typings/
 # Optional npm cache directory
 .npm
 
+#optional .DS_Store ignore
+.DS_Store
+
 # Optional eslint cache
 .eslintcache
 
