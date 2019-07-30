@@ -11,6 +11,7 @@ const dogController = {
                     dogs : Doggy,
                     users : People,
                     user: req.session.username,
+                    userId: req.session.userId,
                     message: req.session.message,
                     isLogged: req.session.logged
                 });
@@ -31,7 +32,8 @@ const dogController = {
                     users : People,
                     user: req.session.username,
                     message: req.session.message,
-                    isLogged: req.session.logged
+                    isLogged: req.session.logged,
+                    userId: req.session.userId,
                 });
             }
         } catch (err) {
@@ -52,7 +54,8 @@ const dogController = {
 
                 res.render('dog/new.ejs', {
                     message : req.session.message,
-                    isLogged: req.session.logged
+                    isLogged: req.session.logged,
+                    userId: req.session.userId,
                 })
             } else {
               const newDog = await Dog.create(req.body)
@@ -86,7 +89,8 @@ const dogController = {
                 res.render('dog/show.ejs', {
                     user : foundAPet,
                     dog : pet,
-                    isLogged: req.session.logged
+                    isLogged: req.session.logged,
+                    userId: req.session.userId,
                 })
             })
             
@@ -102,7 +106,8 @@ const dogController = {
             console.log(foundDog, '<-- in edit button')
             res.render('dog/edit.ejs', {
                 dog : foundDog,
-                isLogged: req.session.logged
+                isLogged: req.session.logged,
+                userId: req.session.userId,
             })
         } catch (err) {
             throw(err)
@@ -118,9 +123,7 @@ const dogController = {
               }
             const updateOne = await Dog.findByIdAndUpdate(req.params.id, req.body)
     
-            res.redirect('/dog', {
-                isLogged: req.session.logged
-            })
+            res.redirect('/dog')
         } catch (err) {
             res.send(err)
         }
@@ -132,7 +135,8 @@ const dogController = {
             foundUser.dogs.remove(req.params.id);
             await foundUser.save();
             res.render(`/users/${req.params.id}/edit`, {
-                isLogged: req.session.logged
+                isLogged: req.session.logged,
+                userId: req.session.userId,
             });
         } catch(err) {
             res.send(err);

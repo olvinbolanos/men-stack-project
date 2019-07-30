@@ -297,15 +297,15 @@ section {
 /* for the box in the dog/edit page */
 
 [type="checkbox"]:not(:checked) {
-    opacity: 1 !important;
-    pointer-events: auto !important;
-    position: relative !important;
+    opacity: 1;
+    pointer-events: auto ;
+    position: relative;
 }
 
 [type='checkbox']:checked {
-  opacity: 1 !important;
-  pointer-events: fill !important;
-  position: relative !important;
+  opacity: 1 ;
+  pointer-events: fill ;
+  position: relative;
 } 
 
 select {
