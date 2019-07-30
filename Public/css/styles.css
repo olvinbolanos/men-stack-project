@@ -155,6 +155,10 @@ section {
     display: inline-block;
 }
 
+.message {
+    text-align: center;
+}
+
 /*** nav media query ****/
 
 
