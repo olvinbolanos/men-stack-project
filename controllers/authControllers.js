@@ -30,6 +30,7 @@ const authController = {
         if(bcrypt.compareSync(req.body.password, foundUser.password)){
           req.session.username = foundUser.username;
           req.session.logged = true;
+          req.session.userId = foundUser._id
           req.session.message = `Welcome Back ${foundUser.username}!`;
           res.redirect('/dog')
         } else {
