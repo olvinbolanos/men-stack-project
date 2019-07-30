@@ -246,15 +246,6 @@ section {
   text-shadow: 3px 2px 3px black;
 }
 
-/* .moveRight {
-    align-self: flex-start;
-    position: relative;
-    float: right;
-    top: -30px;
-} */
-
-
-
 .box img {
   width: 245px;
   height: 245px;
@@ -270,5 +261,5 @@ section {
 .box ul li:nth-child(3) {
     position: relative;
     
-    
+
 }
