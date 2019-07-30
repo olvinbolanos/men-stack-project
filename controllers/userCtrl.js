@@ -45,9 +45,7 @@ const userController = {
                 delete req.body.password
             };
             const updatedUser = await User.findByIdAndUpdate(req.params.id, req.body);
-            res.redirect(`${req.params.id}`, {
-                isLogged: req.session.logged,
-            })
+            res.redirect(`/users/${updatedUser._id}`)
         }catch(err){
             res.send(err)
         }
