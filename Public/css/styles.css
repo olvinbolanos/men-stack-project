@@ -145,6 +145,10 @@ section {
     float: right;
 }
 
+.user-logged {
+    float: right;
+}
+
 /*** nav media query ****/
 
 
@@ -322,4 +326,9 @@ section {
   width: 90%;
   margin: auto;
   padding: 15px;
+}
+/*** footer ***/
+
+.footer-copyright {
+    text-align: center;
 }
