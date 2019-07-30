@@ -46,11 +46,12 @@ const dogController = {
         }
         console.log(req.body)
         try {
-            const user = await User.findOne({'username': req.body.username})
-            const messages = 'Could not find that username'
+            const user = await User.findOne({'username': req.body.username});
             if (!user) {
+                req.session.message = 'Could not find that username';
+
                 res.render('dog/new.ejs', {
-                    message : messages,
+                    message : req.session.message,
                     isLogged: req.session.logged
                 })
             } else {
