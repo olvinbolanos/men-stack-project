@@ -337,6 +337,13 @@ select {
     text-align: center;
 }
 
+.footer-link-text {
+    font-size: 16px;
+    margin: 50px;
+}
+
+/*** end footer ***/
+
 .obContentContainer {
   padding: 0px 50px 0px 50px
 }
