@@ -130,15 +130,13 @@ const dogController = {
     },
     deleteDog: async (req, res) => {
         try{
-            await Dog.findByIdAndRemove(req.params.id);
-            const foundUser = await User.findOne({'dogs': req.params.id});
-            foundUser.dogs.remove(req.params.id);
+            const deletedDog = await Dog.findByIdAndRemove(req.params.id);
+            const foundUser = await User.findOne({'pets': req.params.id});
+            foundUser.pets.remove(req.params.id);
             await foundUser.save();
-            res.render(`/users/${req.params.id}/edit`, {
-                isLogged: req.session.logged,
-                userId: req.session.userId,
-            });
+            res.redirect(`/users/${foundUser._id}`)
         } catch(err) {
+            console.log(err)
             res.send(err);
         }
     }
