@@ -23,8 +23,8 @@ app.use('/users', userRoutes);
 app.use('/dog', dogRoutes)
 app.use('/auth', authRoutes);
 
-app.get('/', (req, res) => {
-  res.render('index.ejs');
+app.get('/', async (req, res) => {
+  res.redirect("/dog")
 });
 
 app.listen(3000, () => {

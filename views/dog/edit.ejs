@@ -1,5 +1,9 @@
 <%- include ../partials/header %>
-<%- include ../partials/head %>
+  <%if(!isLogged) {%>
+    <%- include ../partials/head %>
+  <%} else {%>
+    <%-include('../partials/navlogged')%>
+  <%}%>
   <!-- Your name will be inserted in heading  -->
 <h1>Welcome to your edit page</h1>
 <form method="POST" action="/dog/<%=dog._id%>?_method=PUT" >

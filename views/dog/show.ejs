@@ -1,6 +1,9 @@
 <%- include ../partials/header %>
- <%- include ../partials/head %>
-
+  <%if(!isLogged) {%>
+    <%- include ../partials/head %>
+  <%} else {%>
+    <%-include('../partials/navlogged')%>
+  <%}%>
 <h1>Show Page for FurPet</h1>
 <section class="showGrid">
     <div class="h" id="middlePTag">    
@@ -30,7 +33,6 @@
     <article>
       <main>
         <h1>Details about the owner of the dog</h1>
-
         <ul>
             <li>Name: <%= user.name %></li>
             <li>Phone number: <%= user.phone %></li>
