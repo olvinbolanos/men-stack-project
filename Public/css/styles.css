@@ -452,4 +452,14 @@ td {
   font-family: 'Fredoka One', cursive;
 }
 
+/*** show page image ****/
+.showImage img {
+  width: 350px;
+  height: 290px;
+  border: 3px solid black;
+  border: 3px solid black;
+  box-shadow: 7px 4px 13px black;
+  border-radius: 3px 7px;
+}
+
 
