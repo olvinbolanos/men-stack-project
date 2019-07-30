@@ -5,28 +5,39 @@ const User = require('../models/user');
 const dogController = {
     find: async (req, res) => {
         try {
-            const Doggy = await Dog.find({})
-            const People = await User.find({})
+            const Doggy = await Dog.find({});
+            const People = await User.find({});
             res.render('dog/index.ejs', {
-                dogs : Doggy,
-                users : People
-            })
-           
-    
+                    dogs : Doggy,
+                    users : People,
+                    user: req.session.username,
+                    message: req.session.message,
+                    isLogged: req.session.logged
+                });
         } catch (err) {
-            res.send(err)
+            res.send(err);
         }
     },
     makePerrito: async (req, res, next) => {
-        try {
-            const messages = ''
-            res.render('dog/new.ejs', {
-                message : messages
-            })
-        } catch(err) {
-          res.send(err);
-        }
-      },
+        try{
+            const Doggy = await Dog.find({});
+            const People = await User.find({});
+            if(!req.session.logged) {
+                req.session.message = 'Please Login To Post.'
+                res.redirect('/dog')
+            } else {
+                res.render('dog/new.ejs', {
+                    dogs : Doggy,
+                    users : People,
+                    user: req.session.username,
+                    message: req.session.message,
+                    isLogged: req.session.logged
+                });
+            }
+        } catch (err) {
+            res.send(err);
+        }  
+    },
     newDog: async (req, res) => {
         if ( req.body.isHouseBroken === 'on') {
             req.body.isHouseBroken = true
@@ -35,14 +46,15 @@ const dogController = {
         }
         console.log(req.body)
         try {
-          const newDog = await Dog.create(req.body)
-          const user = await User.findOne({'username': req.body.username})
-          const messages = 'Could not find that username'
-          if (!user) {
-            res.render('dog/new.ejs', {
-                message : messages
-            })
-          } else {
+            const user = await User.findOne({'username': req.body.username})
+            const messages = 'Could not find that username'
+            if (!user) {
+                res.render('dog/new.ejs', {
+                    message : messages,
+                    isLogged: req.session.logged
+                })
+            } else {
+              const newDog = await Dog.create(req.body)
               user.pets.push(newDog)
               user.save((err, savedPet) => {
                   console.log(savedPet)
@@ -72,7 +84,8 @@ const dogController = {
                 console.log('============')
                 res.render('dog/show.ejs', {
                     user : foundAPet,
-                    dog : pet
+                    dog : pet,
+                    isLogged: req.session.logged
                 })
             })
             
@@ -87,7 +100,8 @@ const dogController = {
 
             console.log(foundDog, '<-- in edit button')
             res.render('dog/edit.ejs', {
-                dog : foundDog
+                dog : foundDog,
+                isLogged: req.session.logged
             })
         } catch (err) {
             throw(err)
@@ -101,12 +115,26 @@ const dogController = {
               } else {
                 req.body.isHouseBroken = false;
               }
-              
             const updateOne = await Dog.findByIdAndUpdate(req.params.id, req.body)
     
-            res.redirect('/dog')
+            res.redirect('/dog', {
+                isLogged: req.session.logged
+            })
         } catch (err) {
             res.send(err)
+        }
+    },
+    deleteDog: async (req, res) => {
+        try{
+            await Dog.findByIdAndRemove(req.params.id);
+            const foundUser = await User.findOne({'dogs': req.params.id});
+            foundUser.dogs.remove(req.params.id);
+            await foundUser.save();
+            res.render(`/users/${req.params.id}/edit`, {
+                isLogged: req.session.logged
+            });
+        } catch(err) {
+            res.send(err);
         }
     }
 } 

@@ -7,7 +7,8 @@ const userController = {
         try{
             const foundUsers = await User.find({})
             res.render('users/index.ejs', {
-                user: foundUsers
+                user: foundUsers,
+                isLogged: req.session.logged
             })
         }catch (err){
             res.send(err)
@@ -17,7 +18,8 @@ const userController = {
         try{
             const foundUser = await User.findById(req.params.id).populate('pets');
             res.render('users/show.ejs', {
-                user: foundUser
+                user: foundUser,
+                isLogged: req.session.logged
             })
         }catch(err){
             res.send(err)
@@ -27,7 +29,8 @@ const userController = {
         try{
             const foundUser = await User.findById(req.params.id).populate('pets');
             res.render('users/edit.ejs', {
-                user: foundUser
+                user: foundUser,
+                isLogged: req.session.logged
             })
         }catch(err){
             res.send(err)
@@ -39,7 +42,9 @@ const userController = {
                 delete req.body.password
             };
             const updatedUser = await User.findByIdAndUpdate(req.params.id, req.body);
-            res.redirect(`${req.params.id}`)
+            res.redirect(`${req.params.id}`, {
+                isLogged: req.session.logged
+            })
         }catch(err){
             res.send(err)
         }
