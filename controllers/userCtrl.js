@@ -8,7 +8,8 @@ const userController = {
             const foundUsers = await User.find({})
             res.render('users/index.ejs', {
                 user: foundUsers,
-                isLogged: req.session.logged
+                isLogged: req.session.logged,
+                userId: req.session.userId,
             })
         }catch (err){
             res.send(err)
@@ -19,7 +20,8 @@ const userController = {
             const foundUser = await User.findById(req.params.id).populate('pets');
             res.render('users/show.ejs', {
                 user: foundUser,
-                isLogged: req.session.logged
+                isLogged: req.session.logged,
+                userId: req.session.userId,
             })
         }catch(err){
             res.send(err)
@@ -30,7 +32,8 @@ const userController = {
             const foundUser = await User.findById(req.params.id).populate('pets');
             res.render('users/edit.ejs', {
                 user: foundUser,
-                isLogged: req.session.logged
+                isLogged: req.session.logged,
+                userId: req.session.userId,
             })
         }catch(err){
             res.send(err)
@@ -43,7 +46,7 @@ const userController = {
             };
             const updatedUser = await User.findByIdAndUpdate(req.params.id, req.body);
             res.redirect(`${req.params.id}`, {
-                isLogged: req.session.logged
+                isLogged: req.session.logged,
             })
         }catch(err){
             res.send(err)
