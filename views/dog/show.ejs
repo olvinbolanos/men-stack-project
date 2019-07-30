@@ -4,8 +4,11 @@
   <%} else {%>
     <%-include('../partials/navlogged')%>
   <%}%>
+
+  <!-- Heading for the show page  -->
 <h1>Show Page for FurPet</h1>
-<section class="showGrid">
+
+<section class="showDiv">
     <div class="h" id="middlePTag">    
         <p><span id="name">My dog <%= dog.name %> is wonderful and deserving of a new home.</p>
     </div>
@@ -15,7 +18,7 @@
       
       <div id="square" class="j">
         <ul>
-          <li>Dog name:<a href="/dog/<%= dog._id %>"><%= dog.name %></a></li>
+          <li>Dog name: <%= dog.name %></li>
           <li>Breed: <%= dog.breed %></li>
           <li>Age: <%= dog.age %></li>
           <li>Sex: <%= dog.sex %></li>
@@ -29,8 +32,8 @@
         </ul>
       </div>
     </div>
-</section>
-    <article>
+
+    <div>
       <main>
         <h1>Details about the owner of the dog</h1>
         <ul>
@@ -39,6 +42,12 @@
             <li>Email: <%= user.email %></li>
         </ul>
       </main>
-    </article>
+    </div>
+
+    <div>
+
+    </div>
+
+</section>
 
 <%- include ../partials/footer %>
