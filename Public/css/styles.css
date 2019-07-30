@@ -34,7 +34,6 @@ nav ul{
 
 nav, ul.submenu {
     background: #35f;
-    border-radius: 5px;
     padding: 0;
 }
 
@@ -141,6 +140,10 @@ section {
     left: 50%;
     margin-left: -3px;
   }
+
+.user {
+    float: right;
+}
 
 /*** nav media query ****/
 
