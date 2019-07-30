@@ -1,9 +1,31 @@
 body {
     font-family: Arial;
 }
+* {
+    text-decoration: none;
+}
+
+/******  banner's *******/
+
+/* WEB */
+.index-banner {
+    width: 1450px;
+    height: calc(50vh - 100px);
+    font-family: 'Kaushan Script', cursive;
+    display: table;
+    background: url("https://previews.123rf.com/images/manushot/manushot1608/manushot160800001/62434938-handshake-between-woman-and-dog-high-five-teamwork-between-girl-dog.jpg");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: cover;
+    background-position-y: -280px;
+    background-position-x: 0;
+    z-index: 500;
+  }
+
 /**** Start of nav bar ****/
 nav {
     height: 41px;
+    background-color: #35f !important;
 }
 
 nav ul{
@@ -137,6 +159,11 @@ section {
 }
 
 @media screen and (max-width:535px) {
+    nav {
+        background-color: #fff !important;
+        box-shadow: none !important;
+    }
+
     nav ul{
         display: flex;
         flex-flow: column;
@@ -157,31 +184,34 @@ section {
         right: 95%;
         height: 100%;
         overflow-y: auto;
-        background: #15f;
+        background: #15f !important;
         z-index: 100000;
       }
       nav, ul.submenu {
-        background: white;
-        color: blue;
+        background: white !important;
+        color: blue !important;
         border-radius: 5px;
         padding: 0;
         right: 0;
         left: auto;
     }
 
-    nav a {
+    nav ul a {
+        color: blue;
+    }
+
+    nav ul.submenu > li a {
         color: blue;
     }
 
     nav a:hover {
-        color: black;
+        background: blue;
     }
     
     nav ul li {
         display: flex;
         justify-content: center;
     }
-    
     
     nav ul.submenu {
         position: fixed;
@@ -195,6 +225,7 @@ section {
     nav ul:hover {
      right: 0%;
     }
+
     nav ul  {
         transition: 1s all linear;
         z-index: 1000;
@@ -262,4 +293,30 @@ section {
     position: relative;
     
 
+}
+/* for the checkbox in the dog/edit page */
+
+[type="checkbox"]:not(:checked) {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    position: relative !important;
+}
+
+[type='checkbox']:checked {
+  opacity: 1 !important;
+  pointer-events: fill !important;
+  position: relative !important;
+} 
+
+
+/**** Article Section Index Page ****/
+
+#getStarted h1 {
+  font-size: 44px;
+  font-weight: 400;
+  border-bottom: 3px solid black;
+  border-top: 3px solid black;
+  width: 90%;
+  margin: auto;
+  padding: 15px;
 }
