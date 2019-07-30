@@ -5,40 +5,76 @@
     <%-include('../partials/navlogged')%>
   <%}%>
   <!-- Your name will be inserted in heading  -->
-<h1>Welcome to your edit page</h1>
-<form method="POST" action="/dog/<%=dog._id%>?_method=PUT" >
-    <label>Name:</label></br>
-    <input type="text" name="name"  value="<%=dog.name%>"required/></br>
-    <label>Sex:</label></br>
-    <select id="dog-sex" name="sex">
-    <option value="">--Please choose an option--</option>
-    <option value="Male"
-      <% if (dog.sex === 'Male') {%>
-        selected
-        <% } %>
-      >Male</option>
-    <option value="Female"
-        <%if (dog.sex === "Female") {%>
-            selected
-        <% } %>
-        >Female</option> 
-    </select></br>
-    <label>Is it House Trained</label>
-    <input type="checkbox" name="isHouseBroken" 
-        <% if (dog.isHouseBroken === true) {%>
-            checked
-        <% } %>
-    /></br>
-    <label>Breed:</label></br>
-    <input type="text" name="breed" value="<%=dog.breed%>"/></br>
-    <label>Age:</label></br>
-    <input type="number" name="age" max="15" min="0" value="<%= dog.age %>"/></br>
-    <label>Location:</label></br>
-    <textarea type="text" name="location" value="<%=dog.location%>"><%=dog.location%></textarea></br>
-    <label>Description:</label></br>
-    <textarea type="text" maxlength="100" name="description"><%=dog.description%></textarea></br>
-    <!-- edit button -->
-    <input type="submit" value="Edig Dog Profile" />
-</form>
+<body class='account-body'>
+    <div class='account-container'>
+      <main>
+        <div class="section">
+        <h5>Edit <%=dog.name%>'s Details</h5>
+          <form method="POST" action="/dog/<%=dog._id%>?_method=PUT" >
+            <div class='row'>
+                <div class="input-field col s6">
+                    <input id="textarea1" class="materialize-textarea" type='text' name='name' value="<%=dog.name%>"required/>
+                    <label for="textarea1">Name:</label>
+                </div>
+                <div class="input-field col s6">
+                    <option id="textarea1" class="materialize-textarea" type='text' name='dog-sex' value="<%=dog.sex%>"></option>
+                    <label for="textarea1">Gender:</label>
+                </div>
+                <div class='col s6'><option value="Male"
+                    <% if (dog.sex === 'Male') {%>
+                      selected
+                    <% } %>
+                  >Male</option>
+                  <option value="Female"
+                    <%if (dog.sex === "Female") {%>
+                      selected
+                    <% } %>
+                    >Female</option>
+                </select></div>
+            </div>
+            <div class='row'>
+                <div class="input-field col s6">
+                    <input id="textarea1" class="materialize-textarea" type='text' name='isHouseBroken' value="<%=dog.isHouseBroken%>"/>
+                    <label for="textarea1">Is the pet house trained?</label>
+                </div>
+                  <div class="input-field col s6">
+                    <input id="textarea1" class="materialize-textarea" type='text' name='breed' value="<%=dog.breed%>"required/>
+                    <label for="textarea1">Breed:</label>
+                </div>
+              <div class='col s6'><input type="checkbox" name="isHouseBroken" 
+                <% if (dog.isHouseBroken === true) {%>
+                  checked
+                <% } %> /></div>
+            </div>
+            <div class='row'>
+                <div class="input-field col s6">
+                  <input id="textarea1" class="materialize-textarea" type='text' name='age' min='0' value="<%=dog.age%>"/>
+                  <label for="textarea1">Age:</label>
+                </div>
+                <div class="input-field col s6">
+                  <input id="textarea1" class="materialize-textarea" type='text' name='location' value="<%=dog.location%>"required/>
+                  <label for="textarea1">Location:</label>
+                </div>
+            </div>
+            <div class='row'>
+              <div class='col s12'><label>Description:</label></div>
+              <div class='col s12'><textarea type="text" maxlength="100" name="description"><%=dog.description%></textarea></div>
+            </div>
+            <div class="section">
+              <div class='row'>
+                <div class='col s12'><button class="waves-effect waves-light btn" type="submit">Submit</button></div>
+              </div>
+            </div>
+      </form>
+            <div class="section">
+                <form action="/dog/<%=pets._id%>?_method=DELETE" method="post">
+                    <div class='col s6'><button class="waves-effect waves-light btn">Delete Pet</button></div>
+                    </div>
+                </form> 
+            </div>
+      </div>
+    </main>
+  </div>
+</body>
 
 <%- include ../partials/footer %>
