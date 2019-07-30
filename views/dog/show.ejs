@@ -10,24 +10,24 @@
         <p><span id="name">My dog <%= dog.name %> is wonderful and deserving of a new home.</p>
     </div>
 
-    <div id="imgWrapper" class="i">
+    <div id="imgWrapper" class="showImage">
         <img src="<%= dog.image %>" alt="<%= dog.name %>" />
-    </div>
-
-    <div id="square" class="j">
-      <ul>
-        <li>Dog name:<a href="/dog/<%= dog._id %>"><%= dog.name %></a></li>
-        <li>Breed: <%= dog.breed %></li>
-        <li>Age: <%= dog.age %></li>
-        <li>Sex: <%= dog.sex %></li>
-        <li>House trained:
-            <% if (dog.isHouseBroken  === true) {%>
-            <%= dog.name %> has been house trained.
-            <% } else {%> 
-                <%= dog.name %> has not been house trained.
-            <% } %> 
-        </li>
-      </ul>
+      
+      <div id="square" class="j">
+        <ul>
+          <li>Dog name:<a href="/dog/<%= dog._id %>"><%= dog.name %></a></li>
+          <li>Breed: <%= dog.breed %></li>
+          <li>Age: <%= dog.age %></li>
+          <li>Sex: <%= dog.sex %></li>
+          <li>House trained:
+              <% if (dog.isHouseBroken  === true) {%>
+              <%= dog.name %> has been house trained.
+              <% } else {%> 
+                  <%= dog.name %> has not been house trained.
+              <% } %> 
+          </li>
+        </ul>
+      </div>
     </div>
 </section>
     <article>
