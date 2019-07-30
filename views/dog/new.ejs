@@ -4,39 +4,59 @@
   <%} else {%>
     <%-include('../partials/navlogged')%>
   <%}%>
-<p><%= message %></p>
-<form action="/dog" method="POST">
-    <label>Type in your username:</label></br>
-    <input type="text" name="username" required/></br>
-    <label>Dog's name:</label></br>
-    <input type="text" name="name" required/></br>
-    <label>Sex:</label></br>
- 
-
-    <div class="input-field col s12" name="sex">
-        <select>
-          <option value="" disabled >Choose your option</option>
-          <option value="">--Please choose an option--</option>
-          <option value="Male">Male</option>
-          <option value="Female">Female</option> 
-        </select>
-    </div></br>
-    
-
-
-    <label>Is it House Trained</label>
-    <input type="checkbox" name="isHouseBroken" /></br>
-    <label>Breed:</label></br>
-    <input type="text" name="breed" /></br>
-    <label>Age:</label></br>
-    <input type="number" name="age" max="15" min="0" /></br>
-    <label>Image:</label></br>
-    <input type="text" name="image" required /></br>
-    <label>Location:</label></br>
-    <textarea type="text" name="location"></textarea></br>
-    <label>Description:</label></br>
-    <textarea type="text" maxlength="100" name="description"></textarea></br>
-    <input type="submit" value="Upstream Dog" /> 
-</form>
+<body class="account-body">  
+  <div class="account-container">
+    <main>
+      <div class="section">
+        <p><%= message %></p>
+          <h5>Post a pet for adoption</h5>
+            <form action="/dog" method="POST">
+              <div class="row">
+                <div class="col s6"><label>Type in your username:</label></div>
+                <div class="col s6"><label>Dog"s name:</label></div>
+                <div class="col s6"><input type="text" name="username" required/></div>
+                <div class="col s6"><input type="text" name="name" required/></div>
+              </div>
+              <div class="row">
+                <div class="col s12"><label>Gender:</label></div>
+                <div class="col s6">
+                  <select id="dog-sex" name="sex" style="display:block;">
+                    <option value="Male"> Male </option>
+                    <option value="Female">Female</option>
+                  </select>
+                </div>
+                <div class="col s6">
+                  <p>
+                    <label for="house-broken">
+                      <input id="house-broken" type="checkbox" class="filled-in" name="isHouseBroken"/>
+                      <span>House Trained</span>
+                    </label>
+                  </p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col s6"><label>Breed:</label></div>
+                <div class="col s6"><label>Age:</label></div>
+                <div class="col s6"><input type="text" name="breed" /></div>
+                <div class="col s6"><input type="number" name="age" min="0" /></div>
+              </div>
+              <div class="row">
+                <div class="col s6"><label>Image:</label></div>
+                <div class="col s6"><label>Location:</label></div>
+                <div class="col s6"><input type="text" name="image" required /></div>
+                <div class="col s6"><input type="text" name="location"/></div>
+              </div>
+              <div class="row">
+                <div class="col s12"><label>Description:</label></div>
+                <div class="col s12"><textarea type="text" maxlength="100" name="description"></textarea></div>
+              </div>
+              <div class="row">
+                <div class="col s12"><button class="waves-effect waves-light btn" type="submit">Submit</button></div>
+              </div>
+        </form>
+      </div>
+    </main>
+  </div>
+</body>
 
 <%- include ../partials/footer %>
