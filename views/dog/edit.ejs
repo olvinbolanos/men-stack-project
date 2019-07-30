@@ -17,34 +17,33 @@
                     <label for="textarea1">Name:</label>
                 </div>
                 <div class="input-field col s6">
-                    <option id="textarea1" class="materialize-textarea" type='text' name='dog-sex' value="<%=dog.sex%>"></option>
+                    <input id="textarea1" class="materialize-textarea" type='text' name='sex'/>
                     <label for="textarea1">Gender:</label>
+                    <select id="textarea1" class="materialize-textarea" style="display:block;">
+                      <% if (dog.sex === 'Male') {%>
+                      <option value="Male" selected> Male </option>
+                      <option value="Female">Female</option>
+                        <% } else { %> 
+                      <option value="Female" selected>Female</option>
+                      <option value="Male"> Male </option>
+                        <% } %>
+                    </select>
                 </div>
-                <div class='col s6'><option value="Male"
-                    <% if (dog.sex === 'Male') {%>
-                      selected
-                    <% } %>
-                  >Male</option>
-                  <option value="Female"
-                    <%if (dog.sex === "Female") {%>
-                      selected
-                    <% } %>
-                    >Female</option>
-                </select></div>
             </div>
             <div class='row'>
-                <div class="input-field col s6">
-                    <input id="textarea1" class="materialize-textarea" type='text' name='isHouseBroken' value="<%=dog.isHouseBroken%>"/>
-                    <label for="textarea1">Is the pet house trained?</label>
+                <div class="col s6">
+                  <p>
+                    <label for="house-broken">
+                      <input id="house-broken" type="checkbox" class="filled-in" name="isHouseBroken" value="<%=dog.isHouseBroken%>"/>
+                      <span>House Trained</span>
+                    </label>
+                  </p>
                 </div>
                   <div class="input-field col s6">
                     <input id="textarea1" class="materialize-textarea" type='text' name='breed' value="<%=dog.breed%>"required/>
                     <label for="textarea1">Breed:</label>
                 </div>
-              <div class='col s6'><input type="checkbox" name="isHouseBroken" 
-                <% if (dog.isHouseBroken === true) {%>
-                  checked
-                <% } %> /></div>
+              
             </div>
             <div class='row'>
                 <div class="input-field col s6">
@@ -62,16 +61,14 @@
             </div>
             <div class="section">
               <div class='row'>
-                <div class='col s12'><button class="waves-effect waves-light btn" type="submit">Submit</button></div>
-              </div>
-            </div>
-      </form>
-            <div class="section">
-                <form action="/dog/<%=pets._id%>?_method=DELETE" method="post">
+                <div class='col s6'><button class="waves-effect waves-light btn" type="submit">Submit</button></div>
+                <form action="/dog/<%=dog._id%>?_method=DELETE" method="post">
                     <div class='col s6'><button class="waves-effect waves-light btn">Delete Pet</button></div>
                     </div>
                 </form> 
+              </div>
             </div>
+      </form>
       </div>
     </main>
   </div>
