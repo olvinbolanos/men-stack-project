@@ -426,4 +426,30 @@ td {
     height : 30px;
 }
 
+/**** Dog Treats list *****/
+
+.dogTreats {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.dogTreats main h2 {
+  font-size: 40px;
+  font-weight: 400;
+  border-bottom: 3px solid black;
+  border-top: 3px solid black;
+  width: 90%;
+  margin: 10px auto;
+  padding: 15px;
+}
+
+.dogTreats ol li {
+    text-align: center;
+}
+
+.dogTreats li {
+  font-family: 'Fredoka One', cursive;
+}
+
 
