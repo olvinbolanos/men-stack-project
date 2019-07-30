@@ -294,7 +294,7 @@ section {
     
 
 }
-/* for the checkbox in the dog/edit page */
+/* for the box in the dog/edit page */
 
 [type="checkbox"]:not(:checked) {
     opacity: 1 !important;
