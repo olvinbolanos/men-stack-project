@@ -34,7 +34,6 @@ nav ul{
 
 nav, ul.submenu {
     background: #35f;
-    border-radius: 5px;
     padding: 0;
 }
 
@@ -141,6 +140,14 @@ section {
     left: 50%;
     margin-left: -3px;
   }
+
+.user {
+    float: right;
+}
+
+.user-logged {
+    float: right;
+}
 
 /*** nav media query ****/
 
@@ -323,6 +330,11 @@ select {
   width: 90%;
   margin: auto;
   padding: 15px;
+}
+/*** footer ***/
+
+.footer-copyright {
+    text-align: center;
 }
 
 .obContentContainer {
