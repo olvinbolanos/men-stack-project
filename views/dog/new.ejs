@@ -11,11 +11,19 @@
     <label>Dog's name:</label></br>
     <input type="text" name="name" required/></br>
     <label>Sex:</label></br>
-    <select id="dog-sex" name="sex">
-            <option value="">--Please choose an option--</option>
-            <option value="Male">Male</option>
-            <option value="Female">Female</option> 
-    </select></br>
+ 
+
+    <div class="input-field col s12" name="sex">
+        <select>
+          <option value="" disabled >Choose your option</option>
+          <option value="">--Please choose an option--</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option> 
+        </select>
+    </div></br>
+    
+
+
     <label>Is it House Trained</label>
     <input type="checkbox" name="isHouseBroken" /></br>
     <label>Breed:</label></br>
