@@ -1,5 +1,5 @@
 body {
-    font-family: Arial;
+    /* font-family: Arial; */
     margin: 0;
     height: 100%;
     margin-right: 2em;
@@ -379,6 +379,10 @@ select {
 button {
     opacity: .9;
     background-color: #493843 !important
+}
+
+.brand-logo center font {
+    font-family: 'Paytone One' !important
 }
 
 /** page-div for footer render **/
