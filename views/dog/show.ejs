@@ -1,10 +1,10 @@
 <%- include ../partials/header %>
-<%-include('../partials/banner.ejs')%>
+<%-include("../partials/banner.ejs")%>
 
   <%if(!isLogged) {%>
     <%- include ../partials/head %>
   <%} else {%>
-    <%-include('../partials/navlogged')%>
+    <%-include("../partials/navlogged")%>
   <%}%>
 
 <section class="showDiv">
@@ -48,7 +48,7 @@
       <h3>How to help us locate a new home for pets?</h3>
       <p>Be a participant in finding our dogs a new home and advise a friend
         to visit our website and be apart of the solution. We take pride in finding our
-        pets a new home and people are don't have the time or resources to find their pets
+        pets a new home and people are don"t have the time or resources to find their pets
         a better home.
       </p>
     </div>
