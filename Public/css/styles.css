@@ -21,7 +21,7 @@ html {
 /* WEB */
 .index-banner {
     width: 100%;
-    height: calc(55vh - 100px);
+    height: calc(55vh - 100px);;
     font-family: 'Kaushan Script', cursive;
     display: table;
     background: url("https://i.imgur.com/VCeMQtH.jpg");
@@ -183,13 +183,6 @@ section {
 
 
 @media screen and (max-width:660px) {
-
-    .index-banner {
-        background-position-y: 0;
-        height: calc(70vh - 100px);
-    }
-            
-
     nav ul li {
         display: block;
         width: 120px;
@@ -204,8 +197,8 @@ section {
 @media screen and (max-width:535px) {
 
     nav {
-        background-color: #fff !important;
         box-shadow: none !important;
+        line-height: 43px !important;
     }
 
     nav ul{
@@ -238,10 +231,23 @@ section {
       }
       nav, ul.submenu {
         background: white !important;
+        color: black;
+        opacity: 1;
         border-radius: 5px;
         padding: 0;
         right: 0;
         left: 356px;
+    }
+
+    ul.submenu, ul.submenu a {
+        opacity: 1;
+        color: black;
+    }
+
+
+    .user > a:nth-child(1) {
+        position: relative;
+        top: 44px;
     }
 
     nav ul li:hover ul.submenu {
@@ -251,7 +257,7 @@ section {
 
     .material-icons {
         position: absolute;
-        top: 186px;
+        top: 86px;
     }
 
     td, th {
@@ -292,13 +298,13 @@ section {
 
 @media screen and (max-width: 400px) {
     nav, ul.submenu {
-        background: white !important;
-        color: blue !important;
         border-radius: 5px;
         padding: 0;
         right: 0;
         left: 226px;
     }
+
+   
 
     nav ul li:hover ul.submenu {
         height: 170px;
@@ -770,18 +776,25 @@ article.location > address > span {
   
   
   /* Responsive layout - makes a two column-layout instead of four columns */
+  @media screen and (max-width: 1290px) {
+      .index-banner {
+          background-position-y: -340px;
+          height: calc(50vh - 100px);
+      }
+  }
+  
   @media screen and (max-width: 900px) {
     .index-banner {
-        height: calc(50vh - 100px);
-        background-position-y: 100;
+        height: calc(45vh - 100px);
+        background-position-y: -300px;
 
     }
   }
   
   @media screen and (max-width: 800px) {
     .index-banner {
-        height: calc(50vh - 100px);
-        background-position-y: 0;
+        height: calc(45vh - 100px);
+        background-position-y: -254;
 
     }
 
