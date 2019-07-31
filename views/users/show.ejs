@@ -11,9 +11,9 @@
                     <h5>My Account:</h5>
                     <div class="row">
                         <div class="col s6">What is your name?</div>
-                        <div class="col s6">Location:</div>
+                        <div class="col s6">What is your username?</div>
+                        <div class="col s6"><span class="account-user"><%=user.name%></span></div>
                         <div class="col s6"><span class="account-user"><%=user.username%></span></div>
-                        <div class="col s6"><span class="account-user"><%=user.location%></span></div>
                     </div>
                     <div class="row">
                         <div class="col s12">How can you be reached?</div>
@@ -21,6 +21,10 @@
                         <div class="col s6">Phone:</div>
                         <div class="col s6"><span class="account-user"><%=user.email%></span></div>
                         <div class="col s6"><span class="account-user"><%=user.phone%></span></div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12">Location:</div>
+                        <div class="col s12"><span class="account-user"><%=user.location%></span></div>
                     </div>
                 </div>
                 <div class="row">
