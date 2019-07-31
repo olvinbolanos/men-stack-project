@@ -1,5 +1,5 @@
 body {
-    font-family: "Roboto Slab", Helvetica, serif;
+    font-family: 'Roboto', sans-serif;
 }
 * {
     text-decoration: none;
@@ -11,7 +11,7 @@ body {
 .index-banner {
     width: 1450px;
     height: calc(50vh - 100px);
-    font-family: 'Kaushan Script', cursive;
+    font-family: 'Roboto', sans-serif;
     display: table;
     background: url("https://i.imgur.com/VCeMQtH.jpg");
     background-repeat: no-repeat;
@@ -34,7 +34,7 @@ nav ul{
 }
 
 nav, ul.submenu {
-    background: #35f;
+    background: #513E4B;
     padding: 0;
 }
 
@@ -347,7 +347,12 @@ select {
   padding: 15px;
 }
 
-/** page-div **/
+button {
+    opacity: .9;
+    background-color: #493843 !important
+}
+
+/** page-div for footer render **/
 
 .body-div {
     height: 100% !important;
@@ -371,6 +376,15 @@ select {
 
 }
 
+.body-div-edit {
+    padding-bottom: 60px !important
+}
+
+.footer-div-edit {
+    bottom: 0 !important;
+    width: 100% !important;
+    height: 23px !important
+}
 
 /*** footer ***/
 
@@ -420,7 +434,7 @@ table {
 td >  h2 {
     margin: 0px 0px 10px 0px; 
     line-height: 30px; 
-    font-family: Helvetica; 
+    /* font-family: Helvetica;  */
     font-weight: normal; 
     font-size: 17px !important; 
     color: #000000; 
@@ -437,7 +451,7 @@ td >  h2 {
 .olvin_button {
     background-color: #493843;        
     color: #FFFFFF;        
-    font-family: 'Source Sans Pro', Sans-Serif;        
+    /* font-family: 'Source Sans Pro', Sans-Serif;         */
     font-size: 16px!important;        
     line-height: 22px !important;        
     display: inline-block;        
@@ -456,7 +470,7 @@ td >  h2 {
 .buttons-full-width a {
     background-color: #493843; 
     color: #FFFFFF; 
-    font-family: 'Source Sans Pro', Sans-Serif; 
+    /* font-family: 'Source Sans Pro', Sans-Serif;  */
     font-size: 16px!important; 
     line-height: 22px!important; 
     display: inline-block;        
@@ -513,7 +527,7 @@ td {
 }
 
 .dogTreats li {
-  font-family: 'Fredoka One', cursive;
+  /* font-family: 'Fredoka One', cursive; */
 }
 
 
