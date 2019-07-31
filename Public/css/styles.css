@@ -1,6 +1,15 @@
 body {
     font-family: Arial;
+    margin: 0;
+    height: 100%;
+    margin-right: 2em;
 }
+
+html {
+    min-height: 100%;
+    position: relative;
+}
+
 * {
     text-decoration: none;
 }
@@ -9,8 +18,8 @@ body {
 
 /* WEB */
 .index-banner {
-    width: 1450px;
-    height: calc(50vh - 100px);
+    width: 100%;
+    height: calc(55vh - 100px);
     font-family: 'Kaushan Script', cursive;
     display: table;
     background: url("https://previews.123rf.com/images/manushot/manushot1608/manushot160800001/62434938-handshake-between-woman-and-dog-high-five-teamwork-between-girl-dog.jpg");
@@ -327,7 +336,7 @@ select {
   font-weight: 400;
   border-bottom: 3px solid black;
   border-top: 3px solid black;
-  width: 90%;
+  width: 60%;
   margin: auto;
   padding: 15px;
 }
@@ -465,13 +474,24 @@ td {
 }
 
 /*** show page image ****/
+.showDiv {
+  display: flex;
+  align-items: stretch;
+  flex-direction: row nowrap;
+  justify-content: space-evenly;
+  text-align: left;
+  padding: 10px;
+  height: 100%;
+  width: 100%;
+}
+
 .showImage img {
   width: 280px;
   height: 220px;
   border: 3px solid black;
   border: 3px solid black;
   box-shadow: 7px 4px 13px black;
-  border-radius: 3px 7px;
+  border-radius: 50%;
 }
 
 #imgWrapper {
@@ -481,13 +501,15 @@ td {
     flex-flow: column;
     border: 3px solid black;
     border-radius: 5px 10px;
-    width: 40%;
+    width: 35%;
 }
 
 #imgWrapper img {
   margin: 5px auto;
   padding: 7px;
 }
+
+
 
 #square > ul:nth-child(1) > li {
   font-size: 1.75rem;
@@ -496,8 +518,70 @@ td {
 
 }
 
-#square > a {
-    text-decoration: none;
+.secDiv {
+    width: 25%;
+    font-size: 1.5rem;
+    color: snow;
+    text-shadow: 2px 0px 3px black;
+    border: 3px solid black;
+    border-radius: 5px 10px;
 }
+
+.secDiv main h1 {
+    font-size: 24px;
+}
+
+.lastDiv {
+    width: 25%;
+    border: 3px solid black;
+    border-radius: 5px 10px;
+}
+
+.lastDiv >  p {
+  font-size: 28px;
+  font-size: 1.5rem;
+  color: snow;
+  text-shadow: 2px 0px 3px black;
+
+}
+
+.lastDiv > h3 {
+  font-size: 32px;
+  color: snow;
+  text-shadow: 2px 0px 3px black;
+
+}
+
+.showDiv h1 {
+  font-size: 34px;
+}
+
+#donate h2 {
+    text-align: left;
+    font-weight: 400;
+}
+
+.donateToUs {
+    display: flex;
+    align-items: first baseline;    
+    width: 100%;    
+}
+
+.location {
+    position: relative;
+    height: 20%;
+    padding: 10px;
+    font-size: 1.25rem;
+    left: 5px;
+    align-content: center;
+    justify-content: center;
+}
+
+article.location > p > span, 
+article.location > address > span {
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
 
 

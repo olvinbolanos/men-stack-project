@@ -1,4 +1,6 @@
 <%- include ../partials/header %>
+<%-include('../partials/banner.ejs')%>
+
   <%if(!isLogged) {%>
     <%- include ../partials/head %>
   <%} else {%>
@@ -9,13 +11,9 @@
 <h1>Show Page for FurPet</h1>
 
 <section class="showDiv">
-    <div class="h" id="middlePTag">    
-        <p><span id="name">My dog <%= dog.name %> is wonderful and deserving of a new home.</p>
-    </div>
-
     <div id="imgWrapper" class="showImage">
         <img src="<%= dog.image %>" alt="<%= dog.name %>" />
-      
+    
       <div id="square" class="j">
         <ul>
           <li>Dog name: <%= dog.name %></li>
@@ -33,21 +31,78 @@
       </div>
     </div>
 
-    <div>
+
+    
+
+    <div class="secDiv">
       <main>
-        <h1>Details about the owner of the dog</h1>
+        <h1>Contact Information About the Owner</h1>
         <ul>
             <li>Name: <%= user.name %></li>
             <li>Phone number: <%= user.phone %></li>
             <li>Email: <%= user.email %></li>
+            <li>Location: <%= user.location %></li>
         </ul>
       </main>
+      <p>Note that you must contact the owner and that person will have to see if you are worthy of adopting their pet.
+        The owner has the discretion to choose the best home for their dog.
+      </p>
     </div>
 
-    <div>
-
+    <!-- last div in section -->
+    <div class="lastDiv">
+      <h3>How to help us locate a new home for pets?</h3>
+      <p>Be a participant in finding our dogs a new home and advise a friend
+        to visit our website and be apart of the solution. We take pride in finding our
+        pets a new home and people are don't have the time or resources to find their pets
+        a better home.
+      </p>
     </div>
-
 </section>
+
+<section>
+  <article>
+    <h3>Read the dog's description:</h3>
+    <p></p>
+  </article>
+</section>
+
+<main id="donate">
+  <h2>I want to donate another way to show my support</h2>
+</main>
+
+<section class="donateToUs">
+  <article class="location loc1">
+    <p><span>BY PHONE</span></br>
+        Call 626-445-2666 x 106. Donations restricted to a specific program 
+        (i.e., spay/neuter, the adopting program, etc.) are available.</p>
+  </article>
+
+  <article class="location loc2">
+    <address>
+      <span>BY MAIL</span></br>
+      Furpet Friend Adoption Center
+      ATTN: Development
+      1625 Sundog Ranch Road
+      Pasadena, CA 91101
+    </address>
+  </article>
+
+  <article class="location loc3">
+     <p><span>BY BANK TRANSFER</span></br>
+      To obtain the wire transformation needed by your bank,
+      email FurPet@humaneSociety.org</p>
+  </article>
+
+  <article class="location loc4">
+    <p><span>SPECIAL CONTRIBUTORS</span></br>
+    SaveAPet has contributed more than $50 thousand and we wouldn't 
+    be here without oue best contributors, you. We thank you for being our
+    number one contributors and we encourage you to keep sending us
+    all the support you can give.
+  </p>
+  </article>
+</section>
+
 
 <%- include ../partials/footer %>
