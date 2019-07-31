@@ -32,20 +32,27 @@
                 <div class="col s6"><input type="text" name="age" min="0" value="<%=dog.age%>"/></div>
               </div>
               <div class="row">
-                <div class="col s6"><label>Location:</label></div>
-                <div class="col s6"><label>Image:</label></div>
-                <div class="col s6"><input type="text" name="image" value="<%=dog.image%>"required/></div>
-                <div class="col s6"><input type="text" name="location" value="<%=dog.location%>"required/></div>
+                <div class="col s12"><label>Location:</label></div>
+                <div class="col s12"><input type="text" name="location" value="<%=dog.location%>"required/></div>
               </div>
               <div class="row">
                 <div class="col s12"><label>Description:</label></div>
                 <div class="col s12"><textarea type="text" maxlength="100" name="description"><%=dog.description%></textarea></div>
               </div>
               <div class="row">
+                <div class="col s12"><label>Image:</label></div>
+                <div class="col s6"><img class="edit-image" src="<%=dog.image%>"></div>
+                <div class="col s6"><input type="text" name="image" value="<%=dog.image%>"required/></div>
+              </div>
+              <div class="row">
                 <div class="col s12">
                   <p>
                     <label for="house-broken">
-                      <input id="house-broken" type="checkbox" class="filled-in" name="isHouseBroken" value="<%=dog.isHouseBroken%>"/>
+                      <input id="house-broken" type="checkbox" class="filled-in" name="isHouseBroken"
+                        <%if(dog.isHouseBroken === true){%>
+                          checked
+                        <%}%>
+                        >
                       <span>House Trained</span>
                     </label>
                   </p>
