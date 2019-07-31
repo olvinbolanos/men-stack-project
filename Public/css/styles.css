@@ -35,8 +35,11 @@ html {
 /**** Start of nav bar ****/
 nav {
     height: 41px;
-    background-color: #35f !important;
-    
+    background-color: #35f !important;  
+}
+
+nav:hover {
+    opacity: 1;
 }
 
 nav ul{
@@ -46,7 +49,12 @@ nav ul{
 nav, ul.submenu {
     background: #35f;
     padding: 0;
+    
 }
+
+/* nav, ul.submenu:hover {
+    opacity: 1;
+} */
 
 nav ul li {
     display: block;
@@ -62,16 +70,17 @@ nav a {
     text-decoration: none;
     display: block;
     padding: 10px; 
+    
 }
 
 nav a:hover {
     color: #fff;
     text-shadow: 3px 4px 2px black;
-    opacity: .3;
+    opacity: 1;
 }
 
 nav ul.submenu {
-    position: absolute;
+    position: fixed;
     overflow: hidden;
     height: 0;
     border-radius: 0 0 5px 5px;
@@ -84,8 +93,6 @@ nav ul.submenu li {
     float: none;
     text-align: left;
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-    opacity: .5;
-   
 }
 
 /***** for the drop-down part ******/
@@ -177,23 +184,10 @@ section {
 
     .index-banner {
         background-position-y: 0;
-        background-position-x: 0;
         height: calc(70vh - 100px);
     }
-
-    /* .logo {
-        position: relative;
-        text-align: center;
-    }
-
-    .brand-logo {
-        left: 0;
-    }
-
-    .center {
-        left: 0;
-    } */
             
+
     nav ul li {
         display: block;
         width: 120px;
@@ -206,6 +200,7 @@ section {
 }
 
 @media screen and (max-width:535px) {
+
     nav {
         background-color: #fff !important;
         box-shadow: none !important;
@@ -232,7 +227,12 @@ section {
         height: 100%;
         overflow-y: auto;
         background: #15f !important;
+        opacity: .1;
         z-index: 100000;
+      }
+
+      nav ul:hover {
+          opacity: 0.8;
       }
       nav, ul.submenu {
         background: white !important;
@@ -240,7 +240,17 @@ section {
         border-radius: 5px;
         padding: 0;
         right: 0;
-        left: auto;
+        left: 356px;
+    }
+
+    nav ul li:hover ul.submenu {
+        height: 170px;
+        z-index: 1000;
+    } 
+
+    .material-icons {
+        position: fixed;
+        top: 86px;
     }
 
     nav ul a {
@@ -274,8 +284,8 @@ section {
     }
 
     nav ul  {
-        transition: 1s all linear;
-        z-index: 1000;
+      transition: 1s all linear;
+      z-index: 1000;
     }
 
     section {
@@ -283,6 +293,22 @@ section {
         position: relative;
         margin-left: 10px;
     }
+}
+
+@media screen and (max-width: 400px) {
+    nav, ul.submenu {
+        background: white !important;
+        color: blue !important;
+        border-radius: 5px;
+        padding: 0;
+        right: 0;
+        left: 226px;
+    }
+
+    nav ul li:hover ul.submenu {
+        height: 170px;
+        z-index: 1000;
+    } 
 }
 
 /**** end of nav media query ****/
@@ -669,8 +695,6 @@ article.location > address > span {
     
 }
 
-
-
 /* scroll bar flex display */
 .flexrow {
     display: flex;
@@ -700,11 +724,18 @@ article.location > address > span {
   
   /* Responsive layout - makes a two column-layout instead of four columns */
   @media screen and (max-width: 800px) {
+    .index-banner {
+        height: calc(38vh - 100px);
+        background-position-y: 0;
+
+    }
+
     .column {
       -ms-flex: 20%;
       flex: 50%;
       max-width: 100%;
     }
+
 
     .flexrow {
         display: flex;
@@ -715,6 +746,13 @@ article.location > address > span {
         border: 3px solid black;
         border-radius: 3px 4px 1px 4px;
         width: 70%;
+      }
+  }
+
+  @media screen and (max-width: 768px) {
+      .index-banner {
+        height: calc(38vh - 100px);
+        background-position-y: -49px;
       }
   }
     @media screen and (max-width: 500px) {
