@@ -1,44 +1,128 @@
 <%- include ../partials/header %>
+<%-include('../partials/banner.ejs')%>
+
   <%if(!isLogged) {%>
     <%- include ../partials/head %>
   <%} else {%>
     <%-include('../partials/navlogged')%>
   <%}%>
-<h1>Show Page for FurPet</h1>
-<section class="showGrid">
-    <div class="h" id="middlePTag">    
-        <p><span id="name">My dog <%= dog.name %> is wonderful and deserving of a new home.</p>
+
+<section class="showDiv">
+    <div id="imgWrapper" class="showImage">
+        <img src="<%= dog.image %>" alt="<%= dog.name %>" />
+    
+      <div id="square" class="j">
+        <ul>
+          <li>Dog name: <%= dog.name %></li>
+          <li>Breed: <%= dog.breed %></li>
+          <li>Age: <%= dog.age %></li>
+          <li>Sex: <%= dog.sex %></li>
+          <li>House trained:
+              <% if (dog.isHouseBroken  === true) {%>
+              <%= dog.name %> has been house trained.
+              <% } else {%> 
+                  <%= dog.name %> has not been house trained.
+              <% } %> 
+          </li>
+        </ul>
+      </div>
     </div>
 
-    <div id="imgWrapper" class="i">
-        <img src="#" alt="<%= dog.name %>" />
-    </div>
-
-    <div id="square" class="j">
-      <ul>
-        <li>Dog name:<a href="/dog/<%= dog._id %>"><%= dog.name %></a></li>
-        <li>Breed: <%= dog.breed %></li>
-        <li>Age: <%= dog.age %></li>
-        <li>Sex: <%= dog.sex %></li>
-        <li>House trained:
-            <% if (dog.isHouseBroken  === true) {%>
-            <%= dog.name %> has been house trained.
-            <% } else {%> 
-                <%= dog.name %> has not been house trained.
-            <% } %> 
-        </li>
-      </ul>
-    </div>
-</section>
-    <article>
+    <div class="secDiv">
       <main>
-        <h1>Details about the owner of the dog</h1>
+        <h1>Contact Information About the Owner</h1>
         <ul>
             <li>Name: <%= user.name %></li>
             <li>Phone number: <%= user.phone %></li>
             <li>Email: <%= user.email %></li>
+            <li>Location: <%= user.location %></li>
         </ul>
       </main>
-    </article>
+      <p>Note that you must contact the owner and that person will have to see if you are worthy of adopting their pet.
+        The owner has the discretion to choose the best home for their dog.
+      </p>
+    </div>
+
+    <!-- last div in section -->
+    <div class="lastDiv">
+      <h3>How to help us locate a new home for pets?</h3>
+      <p>Be a participant in finding our dogs a new home and advise a friend
+        to visit our website and be apart of the solution. We take pride in finding our
+        pets a new home and people are don't have the time or resources to find their pets
+        a better home.
+      </p>
+    </div>
+</section>
+
+<!-- flex picture viewer scroll displa --->
+<div class="flexrow">
+ <div class="column">
+    <img src="https://www.sciencefriday.com/wp-content/uploads/2019/06/D9bhA0iXsAAO-u7.jpg" width="100%">
+    <img src="https://media.mnn.com/assets/images/2017/06/senior-dog-flowers.jpg.653x0_q80_crop-smart.jpg" width="100%">
+    <img src="https://www.furryfriendsadoption.org/sites/default/files/2019-06/Ellie%204.jpeg" width="100%">
+    <img src="https://www.insidedogsworld.com/wp-content/uploads/2016/12/husky10.jpg" width="100%">
+    <img src="https://images.glaciermedia.ca/polopoly_fs/1.1892855.1430852425!/fileImage/httpImage/image.jpg_gen/derivatives/landscape_804/tri201111152070029-jpg.jpg" width="100%">
+    <img src="https://live.staticflickr.com/2394/2093463012_3d99f68f65_z.jpg" width="100%">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQphvGMl2bXA7YoZtjQskbj7eqhaPRN-dTC24I7gDU7G-cSZZ7v" width="100%">
+ </div>
+ <div class="column">
+    <img src="https://www.akc.org/wp-content/themes/akc/component-library/assets/img/welcome.jpg" width="100%">
+    <img src="https://fortunedotcom.files.wordpress.com/2019/01/boo.jpg" width="100%">
+    <img src="https://petloversadda.com/wp-content/uploads/2019/06/beagle.jpg" width="100%">
+    <img src="https://previews.123rf.com/images/cole123rf/cole123rf1206/cole123rf120600009/14036908-cute-puppy-with-stuffed-football-english-bulldog-5-weeks-old.jpg" width="100%">
+    <img src="https://cdn.vox-cdn.com/thumbor/wng90rt7pFT3o_oPRNV21iK-2x8=/0x0:4560x3041/1200x800/filters:focal(1916x1157:2644x1885)/cdn.vox-cdn.com/uploads/chorus_image/image/58504395/911428568.jpg.0.jpg" width="100%">
+    <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/black-chiweenie-royalty-free-image-511504986-1563378924.jpg?crop=0.887xw:1.00xh;0.0196xw,0&amp;resize=640:*" width="100%">
+    <img src="https://gendermed.org/wp-content/uploads/2017/06/Puppies-Babies%E2%80%94The-Cuddle-Factor.jpg" width="100%">
+    <img src="https://images.glaciermedia.ca/polopoly_fs/1.1892855.1430852425!/fileImage/httpImage/image.jpg_gen/derivatives/landscape_804/tri201111152070029-jpg.jpg" width="100%">
+    </div>
+  <div class="column">
+    <img src="https://boygeniusreport.files.wordpress.com/2016/11/puppy-dog.jpg?quality=98&amp;strip=all&amp;w=782" width="100%">
+    <img src="https://townsquare.media/site/482/files/2018/10/puppies.jpg?w=980&amp;q=75" width="100%">
+    <img src="https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/13002253/GettyImages-521536928-_1_.jpg" width="100%">
+    <img src="https://i.guim.co.uk/img/media/60d860c6eb74cda56f89b0c94c709480da83ff23/0_212_4533_2720/master/4533.jpg?width=300&amp;quality=85&amp;auto=format&amp;fit=max&amp;s=e04bb0c405a4ef8b00eda226f8030350" width="100%">
+    <img src="https://images.glaciermedia.ca/polopoly_fs/1.1892855.1430852425!/fileImage/httpImage/image.jpg_gen/derivatives/landscape_804/tri201111152070029-jpg.jpg" width="100%">
+    <img src="https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2018/03/20163815/shetland-sheepdog-with-baby-header.jpg" width="100%">
+    <img src="https://live.staticflickr.com/2394/2093463012_3d99f68f65_z.jpg" width="100%">
+    <img src="https://www.petmd.com/sites/default/files/1_13.jpg" width="100%">
+  </div>
+</div>
+
+<main id="donate">
+  <h2>I want to donate another way to show my support</h2>
+</main>
+
+<section class="donateToUs">
+  <article class="location loc1">
+    <p><span>BY PHONE</span></br>
+        Call 626-445-2666 x 106. Donations restricted to a specific program 
+        (i.e., spay/neuter, the adopting program, etc.) are available.</p>
+  </article>
+
+  <article class="location loc2">
+    <address>
+      <span>BY MAIL</span></br>
+      Furpet Friend Adoption Center
+      ATTN: Development
+      1625 Sundog Ranch Road
+      Pasadena, CA 91101
+    </address>
+  </article>
+
+  <article class="location loc3">
+     <p><span>BY BANK TRANSFER</span></br>
+      To obtain the wire transformation needed by your bank,
+      email FurPet@humaneSociety.org</p>
+  </article>
+
+  <article class="location loc4">
+    <p><span>SPECIAL CONTRIBUTORS</span></br>
+    SaveAPet has contributed more than $50 thousand and we wouldn't 
+    be here without oue best contributors, you. We thank you for being our
+    number one contributors and we encourage you to keep sending us
+    all the support you can give.
+  </p>
+  </article>
+</section>
+
 
 <%- include ../partials/footer %>
