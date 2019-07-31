@@ -13,11 +13,11 @@ body {
     height: calc(50vh - 100px);
     font-family: 'Kaushan Script', cursive;
     display: table;
-    background: url("https://previews.123rf.com/images/manushot/manushot1608/manushot160800001/62434938-handshake-between-woman-and-dog-high-five-teamwork-between-girl-dog.jpg");
+    background: url("https://i.imgur.com/VCeMQtH.jpg");
     background-repeat: no-repeat;
     background-position: right;
     background-size: cover;
-    background-position-y: -280px;
+    background-position-y: -500px;
     background-position-x: 0;
     z-index: 500;
   }
@@ -25,7 +25,7 @@ body {
 /**** Start of nav bar ****/
 nav {
     height: 41px;
-    background-color: #35f !important;
+    background-color: #493843 !important;
     
 }
 
@@ -341,13 +341,43 @@ select {
   margin: auto;
   padding: 15px;
 }
+
+/** page-div **/
+
+.body-div {
+    height: 100% !important;
+}
+
+.page-div {
+    min-height: 100% !important;
+    position: relative !important
+}
+
+.body-div {
+    padding: 10px !important;
+    padding-bottom: 60px !important;
+}
+
+.footer-div {
+    position: absolute !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    height: 45px !important
+
+}
+
+
 /*** footer ***/
 
 .footer-copyright {
+    bottom: 0;
+    color: #ffffff;
+    background-color: #493843;
     text-align: center;
 }
 
 .footer-link-text {
+    color: #ffffff;
     font-size: 16px;
     margin: 50px;
 }
@@ -400,7 +430,7 @@ td >  h2 {
 }
 
 .olvin_button {
-    background-color: #4b8bed;        
+    background-color: #493843;        
     color: #FFFFFF;        
     font-family: 'Source Sans Pro', Sans-Serif;        
     font-size: 16px!important;        
@@ -419,7 +449,7 @@ td >  h2 {
 }
 
 .buttons-full-width a {
-    background-color: #4b8bed; 
+    background-color: #493843; 
     color: #FFFFFF; 
     font-family: 'Source Sans Pro', Sans-Serif; 
     font-size: 16px!important; 
