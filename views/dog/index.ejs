@@ -1,13 +1,13 @@
   <%- include ../partials/header %>
-  <%-include('../partials/banner.ejs')%>
+  <%-include("../partials/banner.ejs")%>
     <%if(!isLogged) {%>
       <%- include ../partials/head %>
     <%} else {%>
-      <%-include('../partials/navlogged')%>
+      <%-include("../partials/navlogged")%>
     <%}%>
   <section>
     <section id="homeBase">
-    <span><%=message%></span>
+    <p class="message"><%=message%></p>
         </header>
       </section>
         <article>
