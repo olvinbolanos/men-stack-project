@@ -23,11 +23,11 @@ html {
     height: calc(55vh - 100px);
     font-family: 'Kaushan Script', cursive;
     display: table;
-    background: url("https://i.imgur.com/kRSaenM.jpg");
+    background: url("https://i.imgur.com/VCeMQtH.jpg");
     background-repeat: no-repeat;
     background-position: right;
     background-size: cover;
-    background-position-y: -280px;
+    background-position-y: -500px;
     background-position-x: 0;
     z-index: 500;
   }
@@ -35,7 +35,7 @@ html {
 /**** Start of nav bar ****/
 nav {
     height: 41px;
-    background-color: #35f !important;
+    background-color: #493843 !important;
     
 }
 
@@ -44,7 +44,7 @@ nav ul{
 }
 
 nav, ul.submenu {
-    background: #35f;
+    background: #513E4B;
     padding: 0;
 }
 
@@ -168,6 +168,10 @@ section {
 
  .logo {
     display: inline-block;
+}
+
+.message {
+    text-align: center;
 }
 
 /*** nav media query ****/
@@ -371,11 +375,62 @@ select {
   margin: auto;
   padding: 15px;
 }
+
+button {
+    opacity: .9;
+    background-color: #493843 !important
+}
+
+/** page-div for footer render **/
+
+.body-div {
+    height: 100% !important;
+}
+
+.page-div {
+    min-height: 100% !important;
+    position: relative !important
+}
+
+.body-div {
+    padding: 10px !important;
+    padding-bottom: 60px !important;
+}
+
+.footer-div {
+    position: absolute !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    height: 45px !important
+
+}
+
+.body-div-edit {
+    padding-bottom: 60px !important
+}
+
+.footer-div-edit {
+    bottom: 0 !important;
+    width: 100% !important;
+    height: 23px !important
+}
+
 /*** footer ***/
 
 .footer-copyright {
+    bottom: 0;
+    color: #ffffff;
+    background-color: #493843;
     text-align: center;
 }
+
+.footer-link-text {
+    color: #ffffff;
+    font-size: 16px;
+    margin: 50px;
+}
+
+/*** end footer ***/
 
 .obContentContainer {
   padding: 0px 50px 0px 50px
@@ -408,7 +463,7 @@ table {
 td >  h2 {
     margin: 0px 0px 10px 0px; 
     line-height: 30px; 
-    font-family: Helvetica; 
+    /* font-family: Helvetica;  */
     font-weight: normal; 
     font-size: 17px !important; 
     color: #000000; 
@@ -423,9 +478,9 @@ td >  h2 {
 }
 
 .olvin_button {
-    background-color: #4b8bed;        
+    background-color: #493843;        
     color: #FFFFFF;        
-    font-family: 'Source Sans Pro', Sans-Serif;        
+    /* font-family: 'Source Sans Pro', Sans-Serif;         */
     font-size: 16px!important;        
     line-height: 22px !important;        
     display: inline-block;        
@@ -442,9 +497,9 @@ td >  h2 {
 }
 
 .buttons-full-width a {
-    background-color: #4b8bed; 
+    background-color: #493843; 
     color: #FFFFFF; 
-    font-family: 'Source Sans Pro', Sans-Serif; 
+    /* font-family: 'Source Sans Pro', Sans-Serif;  */
     font-size: 16px!important; 
     line-height: 22px!important; 
     display: inline-block;        
@@ -501,7 +556,7 @@ td {
 }
 
 .dogTreats li {
-  font-family: 'Fredoka One', cursive;
+  /* font-family: 'Fredoka One', cursive; */
 }
 
 /*** show page image ****/
