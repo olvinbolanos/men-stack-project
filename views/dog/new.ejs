@@ -1,14 +1,16 @@
-<%- include ../partials/header %>
+<div class="page-div"><%- include ../partials/header %>
+<div class="header-div">
   <%if(!isLogged) {%>
     <%- include ../partials/head %>
   <%} else {%>
     <%-include('../partials/navlogged')%>
   <%}%>
+  </div>
+  <div class="body-div">
 <body class="account-body">  
   <div class="account-container">
     <main>
       <div class="section">
-        <p><%= message %></p>
           <h5>Post a pet for adoption</h5>
             <form action="/dog" method="POST">
               <div class="row">
@@ -58,5 +60,8 @@
     </main>
   </div>
 </body>
-
+</div>
+ <div class="footer-div">
 <%- include ../partials/footer %>
+</div>
+</div>
