@@ -177,7 +177,7 @@ section {
 
     .index-banner {
         background-position-y: 0;
-        background-position-x: -100px;
+        background-position-x: 0;
         height: calc(70vh - 100px);
     }
 
