@@ -20,7 +20,7 @@ html {
 /* WEB */
 .index-banner {
     width: 100%;
-    height: calc(55vh - 100px);
+    height: calc(55vh - 100px);;
     font-family: 'Kaushan Script', cursive;
     display: table;
     background: url("https://i.imgur.com/VCeMQtH.jpg");
@@ -183,10 +183,10 @@ section {
 
 @media screen and (max-width:660px) {
 
-    .index-banner {
-        background-position-y: 0;
+    /* .index-banner {
         height: calc(70vh - 100px);
-    }
+        background-position-y: 0;
+    } */
             
 
     nav ul li {
@@ -762,22 +762,26 @@ article.location > address > span {
   
   
   /* Responsive layout - makes a two column-layout instead of four columns */
+  @media screen and (max-width: 1290px) {
+      .index-banner {
+          background-position-y: -340px;
+          height: calc(50vh - 100px);
+      }
+  }
+  
   @media screen and (max-width: 900px) {
     .index-banner {
-        height: calc(50vh - 100px);
-        background-position-y: 100;
+        height: calc(45vh - 100px);
+        background-position-y: -300px;
 
     }
   }
   
-  
-  
-  
-  
+
   @media screen and (max-width: 800px) {
     .index-banner {
-        height: calc(50vh - 100px);
-        background-position-y: 0;
+        height: calc(45vh - 100px);
+        background-position-y: -254;
 
     }
 
