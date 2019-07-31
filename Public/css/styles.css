@@ -13,7 +13,7 @@ body {
     height: calc(50vh - 100px);
     font-family: 'Kaushan Script', cursive;
     display: table;
-    background: url("https://previews.123rf.com/images/manushot/manushot1608/manushot160800001/62434938-handshake-between-woman-and-dog-high-five-teamwork-between-girl-dog.jpg");
+    background: url("https://i.imgur.com/kRSaenM.jpg");
     background-repeat: no-repeat;
     background-position: right;
     background-size: cover;
@@ -133,6 +133,11 @@ section {
 #login-account {
     display: flex;
     justify-content: center;
+}
+
+.edit-image {
+    max-height: 100px;
+    max-width: 100px;
 }
 
 .vl {
