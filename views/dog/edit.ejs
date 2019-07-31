@@ -48,7 +48,11 @@
                 <div class="col s12">
                   <p>
                     <label for="house-broken">
-                      <input id="house-broken" type="checkbox" class="filled-in" name="isHouseBroken" value="<%=dog.isHouseBroken%>"/>
+                      <input id="house-broken" type="checkbox" class="filled-in" name="isHouseBroken"
+                        <%if(dog.isHouseBroken === true){%>
+                          checked
+                        <%}%>
+                        >
                       <span>House Trained</span>
                     </label>
                   </p>
