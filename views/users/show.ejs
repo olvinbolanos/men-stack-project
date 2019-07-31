@@ -1,9 +1,9 @@
-<div class="page-div"><%-include('../partials/header')%>
+<div class="page-div"><%-include("../partials/header")%>
 <div class="header-div">
   <%if(!isLogged) {%>
     <%- include ../partials/head %>
   <%} else {%>
-    <%-include('../partials/navlogged')%>
+    <%-include("../partials/navlogged")%>
   <%}%>
   </div>
   <div class="body-div">
@@ -53,6 +53,6 @@
 </div>
 
 <div class="footer-div">
-<%-include('../partials/footer')%>
+<%-include("../partials/footer")%>
 </div>
 </div>

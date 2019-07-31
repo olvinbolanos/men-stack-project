@@ -27,25 +27,25 @@ ________________________________________________________________________________
 * HTML5
 * JavaScript
 * Express
+* NodeJS
 * MongoDB
 * Mongoose
 * CSS
+* Google Fonts
+* Materialize
 * Git
 * GitHub
-* Materialize
 
 
 ### Visit the site!
 _______________________________________________________________________________________________________________________
-
-
 
 Visit the project page [here]()
 
 ### Next Steps
 _______________________________________________________________________________________________________________________
 
-* Implement wishlist
+* Implement saved dog list for potential adopters
 * Implement search function
 
 
