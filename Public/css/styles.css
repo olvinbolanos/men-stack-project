@@ -393,6 +393,9 @@ select {
   padding: 15px;
 }
 
+/** FOR FUREVER FRIEND LOGO FONT 
+font-family: 'Paytone One', sans-serif; **/
+
 button {
     opacity: .9;
     background-color: #493843 !important
@@ -774,10 +777,6 @@ article.location > address > span {
 
     }
   }
-  
-  
-  
-  
   
   @media screen and (max-width: 800px) {
     .index-banner {
