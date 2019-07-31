@@ -1,54 +1,61 @@
-<%-include('../partials/header.ejs')%>
-    <%if(!isLogged) {%>
-      <%- include ../partials/head %>
-    <%} else {%>
-      <%-include('../partials/navlogged')%>
-    <%}%>
-<body class='account-body'>
-  <div class='account-container'>
-    <main>
-      <div class="row">
-        <div class="col s6">
-          <h5>Furever Friend makes adopting easier</h5>
-            <div class="row">
-              <div class='col s12'>Create and save your shelter/adopter profile.</div>
+<div class="page-div"><%-include('../partials/header.ejs')%>
+     <div class="header-div">
+      <%if(!isLogged) {%>
+        <%- include ../partials/head %>
+          <%} else {%>
+        <%-include('../partials/navlogged')%>
+      <%}%>
+    </div>
+  <div class="body-div">
+    <body class='account-body'>
+      <div class='account-container'>
+        <main>
+          <div class="row">
+            <div class="col s6">
+              <h5>Furever Friend makes adopting easier</h5>
+                <div class="row">
+                  <div class='col s12'>Create and save your shelter/adopter profile.</div>
+                </div>
+                <div class="row">
+                  <div class='col s12'>Get involved and help promote adoptable pets in your area.</div>
+                </div>
             </div>
-            <div class="row">
-              <div class='col s12'>Get involved and help promote adoptable pets in your area.</div>
-            </div>
-        </div>
-      <div class="vl"></div>
-      <div class="col s6">
-        <h5>Login To Your Account</h5>
-          <div class="section">
-          <form action='/auth/login' method='POST'>
-              <div class="row">
-                  <div class="input-field col s12">
-                    <input id="textarea1" class="materialize-textarea" type='email' name='email'/>
-                    <label for="textarea1">Email</label>
+          <div class="vl"></div>
+          <div class="col s6">
+            <h5>Login To Your Account</h5>
+              <div class="section">
+              <form action='/auth/login' method='POST'>
+                  <div class="row">
+                      <div class="input-field col s12">
+                        <input id="textarea1" class="materialize-textarea" type='email' name='email'/>
+                        <label for="textarea1">Email</label>
+                      </div>
                   </div>
+                  <div class="row">
+                        <div class="input-field col s12">
+                          <input id="textarea1" class="materialize-textarea" type='password' name='password'/>
+                          <label for="textarea1">Password</label>
+                        </div>  
+                  </div>
+                  <div class="row">
+                    <div class='col s12' id="login-account"><button class="waves-effect waves-light btn" type='submit'>Login</div>
+                  </div>
+              </form>
               </div>
-              <div class="row">
-                    <div class="input-field col s12">
-                      <input id="textarea1" class="materialize-textarea" type='password' name='password'/>
-                      <label for="textarea1">Password</label>
-                    </div>  
+              <div class="divider"></div>
+              <div class="section">
+                <div class="row">
+                  <div class='col s12' id="login-account">Don't have an account?</div>
+                </div>
+                <div class="row">
+                  <div class='col s12' id="login-account"><a href="/auth/new"><button class="waves-effect waves-light btn">Register Now</button></a></div>
+                </div>
               </div>
-              <div class="row">
-                <div class='col s12' id="login-account"><button class="waves-effect waves-light btn" type='submit'>Login</div>
-              </div>
-          </form>
-          </div>
-          <div class="divider"></div>
-          <div class="section">
-            <div class="row">
-              <div class='col s12' id="login-account">Don't have an account?</div>
-            </div>
-            <div class="row">
-              <div class='col s12' id="login-account"><a href="/auth/new"><button class="waves-effect waves-light btn">Register Now</button></a></div>
-            </div>
-          </div>
-    </main>
+        </main>
+      </div>
+    </body>
   </div>
-</body>
-<%-include('../partials/footer.ejs')%>
+  <div class="footer-div">
+    <%-include('../partials/footer.ejs')%>
+  </div>
+</div>
