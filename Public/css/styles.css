@@ -36,7 +36,10 @@ html {
 nav {
     height: 41px;
     background-color: #493843 !important;
-    
+}
+
+nav:hover {
+    opacity: 1;
 }
 
 nav ul{
@@ -46,7 +49,9 @@ nav ul{
 nav, ul.submenu {
     background: #513E4B;
     padding: 0;
+    
 }
+
 
 nav ul li {
     display: block;
@@ -62,16 +67,17 @@ nav a {
     text-decoration: none;
     display: block;
     padding: 10px; 
+    
 }
 
 nav a:hover {
     color: #fff;
     text-shadow: 3px 4px 2px black;
-    opacity: .3;
+    opacity: 1;
 }
 
 nav ul.submenu {
-    position: absolute;
+    position: fixed;
     overflow: hidden;
     height: 0;
     border-radius: 0 0 5px 5px;
@@ -84,8 +90,6 @@ nav ul.submenu li {
     float: none;
     text-align: left;
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-    opacity: .5;
-   
 }
 
 /***** for the drop-down part ******/
@@ -181,23 +185,10 @@ section {
 
     .index-banner {
         background-position-y: 0;
-        background-position-x: 0;
         height: calc(70vh - 100px);
     }
-
-    /* .logo {
-        position: relative;
-        text-align: center;
-    }
-
-    .brand-logo {
-        left: 0;
-    }
-
-    .center {
-        left: 0;
-    } */
             
+
     nav ul li {
         display: block;
         width: 120px;
@@ -210,6 +201,7 @@ section {
 }
 
 @media screen and (max-width:535px) {
+
     nav {
         background-color: #fff !important;
         box-shadow: none !important;
@@ -235,28 +227,37 @@ section {
         right: 95%;
         height: 100%;
         overflow-y: auto;
-        background: #15f !important;
+        background: #493843 !important;
+        opacity: .1;
         z-index: 100000;
+      }
+
+      nav ul:hover {
+          opacity: 0.9;
       }
       nav, ul.submenu {
         background: white !important;
-        color: blue !important;
         border-radius: 5px;
         padding: 0;
         right: 0;
-        left: auto;
+        left: 356px;
     }
 
-    nav ul a {
-        color: blue;
+    nav ul li:hover ul.submenu {
+        height: 170px;
+        z-index: 1000;
+    } 
+
+    .material-icons {
+        position: absolute;
+        top: 186px;
     }
 
-    nav ul.submenu > li a {
-        color: blue;
-    }
-
-    nav a:hover {
-        background: blue;
+    td, th {
+        padding: 10px 5px;
+        display: table-cell;
+        text-align: center !important;
+        border-radius: 2px;
     }
     
     nav ul li {
@@ -269,7 +270,6 @@ section {
         overflow: hidden;
         height: 0;
         border-radius: 0 0 5px 5px;
-        
         z-index: 99998;
     }
 
@@ -278,8 +278,8 @@ section {
     }
 
     nav ul  {
-        transition: 1s all linear;
-        z-index: 1000;
+      transition: 1s all linear;
+      z-index: 1000;
     }
 
     section {
@@ -287,6 +287,22 @@ section {
         position: relative;
         margin-left: 10px;
     }
+}
+
+@media screen and (max-width: 400px) {
+    nav, ul.submenu {
+        background: white !important;
+        color: blue !important;
+        border-radius: 5px;
+        padding: 0;
+        right: 0;
+        left: 226px;
+    }
+
+    nav ul li:hover ul.submenu {
+        height: 170px;
+        z-index: 1000;
+    } 
 }
 
 /**** end of nav media query ****/
@@ -484,7 +500,6 @@ td >  h2 {
 .olvin_button {
     background-color: #493843;        
     color: #FFFFFF;        
-    /* font-family: 'Source Sans Pro', Sans-Serif;         */
     font-size: 16px!important;        
     line-height: 22px !important;        
     display: inline-block;        
@@ -503,7 +518,6 @@ td >  h2 {
 .buttons-full-width a {
     background-color: #493843; 
     color: #FFFFFF; 
-    /* font-family: 'Source Sans Pro', Sans-Serif;  */
     font-size: 16px!important; 
     line-height: 22px!important; 
     display: inline-block;        
@@ -557,10 +571,6 @@ td {
 
 .dogTreats ol li {
     text-align: center;
-}
-
-.dogTreats li {
-  /* font-family: 'Fredoka One', cursive; */
 }
 
 /*** show page image ****/
@@ -728,8 +738,6 @@ article.location > address > span {
     
 }
 
-
-
 /* scroll bar flex display */
 .flexrow {
     display: flex;
@@ -758,12 +766,31 @@ article.location > address > span {
   
   
   /* Responsive layout - makes a two column-layout instead of four columns */
+  @media screen and (max-width: 900px) {
+    .index-banner {
+        height: calc(50vh - 100px);
+        background-position-y: 100;
+
+    }
+  }
+  
+  
+  
+  
+  
   @media screen and (max-width: 800px) {
+    .index-banner {
+        height: calc(50vh - 100px);
+        background-position-y: 0;
+
+    }
+
     .column {
       -ms-flex: 20%;
       flex: 50%;
       max-width: 100%;
     }
+
 
     .flexrow {
         display: flex;
@@ -774,6 +801,13 @@ article.location > address > span {
         border: 3px solid black;
         border-radius: 3px 4px 1px 4px;
         width: 70%;
+      }
+  }
+
+  @media screen and (max-width: 768px) {
+      .index-banner {
+        height: calc(38vh - 100px);
+        background-position-y: -49px;
       }
   }
     @media screen and (max-width: 500px) {
