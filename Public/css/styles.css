@@ -1,5 +1,6 @@
 body {
-    font-family: "Roboto Slab", Helvetica, serif;
+    font-family: 'Roboto', sans-serif;
+
 }
 * {
     text-decoration: none;
@@ -11,7 +12,6 @@ body {
 .index-banner {
     width: 1450px;
     height: calc(50vh - 100px);
-    font-family: 'Kaushan Script', cursive;
     display: table;
     background: url("https://i.imgur.com/kRSaenM.jpg");
     background-repeat: no-repeat;
@@ -379,7 +379,6 @@ table {
 td >  h2 {
     margin: 0px 0px 10px 0px; 
     line-height: 30px; 
-    font-family: Helvetica; 
     font-weight: normal; 
     font-size: 17px !important; 
     color: #000000; 
@@ -395,8 +394,7 @@ td >  h2 {
 
 .olvin_button {
     background-color: #4b8bed;        
-    color: #FFFFFF;        
-    font-family: 'Source Sans Pro', Sans-Serif;        
+    color: #FFFFFF;                
     font-size: 16px!important;        
     line-height: 22px !important;        
     display: inline-block;        
@@ -415,7 +413,6 @@ td >  h2 {
 .buttons-full-width a {
     background-color: #4b8bed; 
     color: #FFFFFF; 
-    font-family: 'Source Sans Pro', Sans-Serif; 
     font-size: 16px!important; 
     line-height: 22px!important; 
     display: inline-block;        
@@ -471,8 +468,6 @@ td {
     text-align: center;
 }
 
-.dogTreats li {
-  font-family: 'Fredoka One', cursive;
-}
+
 
 
