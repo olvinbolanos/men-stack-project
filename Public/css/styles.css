@@ -160,7 +160,7 @@ section {
 
 .user {
     float: right;
-} */
+} 
 
 .user-logged {
     float: right;
@@ -177,9 +177,22 @@ section {
 
     .index-banner {
         background-position-y: 0;
+        background-position-x: -100px;
         height: calc(70vh - 100px);
-
     }
+
+    /* .logo {
+        position: relative;
+        text-align: center;
+    }
+
+    .brand-logo {
+        left: 0;
+    }
+
+    .center {
+        left: 0;
+    } */
             
     nav ul li {
         display: block;
