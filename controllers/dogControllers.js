@@ -46,7 +46,6 @@ const dogController = {
         } else {
             req.body.isHouseBroken = false
         }
-        console.log(req.body)
         try {
             const user = await User.findOne({'username': req.body.username});
             if (!user) {
@@ -61,7 +60,6 @@ const dogController = {
               const newDog = await Dog.create(req.body)
               user.pets.push(newDog)
               user.save((err, savedPet) => {
-                  console.log(savedPet)
                   res.redirect('/dog')
               })
             }
@@ -79,13 +77,8 @@ const dogController = {
                 for (let i = 0; i < foundAPet.pets.length; i++) {
                     if (foundAPet.pets[i]._id.toString() === req.params.id.toString()) {
                       pet = foundAPet.pets[i];
-                      console.log(pet, ' the found pet')
                     }
                 }
-
-                console.log('===============')
-                console.log(foundAPet, ' <--- in dogs show page')
-                console.log('============')
                 res.render('dog/show.ejs', {
                     user : foundAPet,
                     dog : pet,
@@ -100,10 +93,8 @@ const dogController = {
     },
     editOne: async (req, res) => {
         try {
-            
             const foundDog = await Dog.findById(req.params.id)
 
-            console.log(foundDog, '<-- in edit button')
             res.render('dog/edit.ejs', {
                 dog : foundDog,
                 isLogged: req.session.logged,
@@ -114,11 +105,10 @@ const dogController = {
         }
     },
     update: async (req, res) => {
-        console.log(req.body, '<-- update one')
         try {
             if(req.body.isHouseBroken === 'on'){
                 req.body.isHouseBroken = true;
-              } else {
+              } else if(req.body.isHouseBroken === 'off') {
                 req.body.isHouseBroken = false;
               }
             const updateOne = await Dog.findByIdAndUpdate(req.params.id, req.body)
@@ -136,7 +126,6 @@ const dogController = {
             await foundUser.save();
             res.redirect(`/users/${foundUser._id}`)
         } catch(err) {
-            console.log(err)
             res.send(err);
         }
     }
