@@ -28,6 +28,7 @@ const userController = {
         }
     },
     edit: async (req, res) => {
+
         try{
             const foundUser = await User.findById(req.params.id).populate('pets');
             res.render('users/edit.ejs', {
