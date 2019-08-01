@@ -22,7 +22,6 @@ html {
 .index-banner {
     width: 100%;
     height: calc(55vh - 100px);;
-    font-family: 'Kaushan Script', cursive;
     display: table;
     background: url("https://i.imgur.com/VCeMQtH.jpg");
     background-repeat: no-repeat;
