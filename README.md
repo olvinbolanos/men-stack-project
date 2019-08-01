@@ -39,7 +39,7 @@ ________________________________________________________________________________
 
 ### Visit the site!
 _______________________________________________________________________________________________________________________
-[Screenshot] (https://i.imgur.com/HgQQTjW.png)
+[Screenshot] <img src="https://i.imgur.com/HgQQTjW.png">
 
 Visit the project page [here]()
 
