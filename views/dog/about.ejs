@@ -11,7 +11,8 @@
 
     .olvin_content_flex {
       display: flex;
-      flex-flow: column wrap;
+      align-items: flex-start;
+      flex-wrap: wrap;
       justify-content: space-around;
       width: 100%;
     }
@@ -59,6 +60,28 @@
       color: red;
       opacity: 1;
       font-size: 55px;
+    }
+
+    @media screen and (max-width: 800px) {
+      .olvin_content_flex {
+      flex-flow: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+
+    .aboutInfo {
+      display: flex;
+      flex-flow: column wrap;
+      width: 60%;
+      height: 40%;
+      padding: 5px;
+    }
+
+    .aboutInfo p {
+      text-align: center;
+    }
+
     }
       
 
