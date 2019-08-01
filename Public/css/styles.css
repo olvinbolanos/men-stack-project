@@ -86,7 +86,7 @@ nav a:hover {
 }
 
 nav ul.submenu {
-    position: fixed;
+    position: absolute;
     overflow: hidden;
     height: 0;
     border-radius: 0 0 5px 5px;
