@@ -47,6 +47,14 @@ nav ul{
     margin: 0;
 }
 
+nav ul li.brand-logo {
+    width: 40%;
+}
+
+nav ul li.brand-logo a {
+    font-size: 50px
+}
+
 nav, ul.submenu {
     background: #513E4B;
     padding: 0;
@@ -399,8 +407,10 @@ select {
   padding: 15px;
 }
 
-/** FOR FUREVER FRIEND LOGO FONT 
-font-family: 'Paytone One', sans-serif; **/
+/** FOR FUREVER FRIEND LOGO FONT **/
+.brand-logo {
+    font-family: 'Paytone One', sans-serif;
+}
 
 button {
     opacity: .9;
