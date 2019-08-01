@@ -61,6 +61,7 @@ nav ul li {
     float: left;
     margin: 0;
     padding: 0;
+    cursor: pointer !important;
 }
 
 nav a {
@@ -68,7 +69,6 @@ nav a {
     text-decoration: none;
     display: block;
     padding: 10px; 
-    
 }
 
 nav a:hover {
@@ -484,7 +484,6 @@ table {
 td >  h2 {
     margin: 0px 0px 10px 0px; 
     line-height: 30px; 
-    /* font-family: Helvetica;  */
     font-weight: normal; 
     font-size: 17px !important; 
     color: #000000; 
