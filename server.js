@@ -6,7 +6,6 @@ const app = express();
 require('dotenv').config();
 const PORT = process.env.PORT;
 
-
 require ('./db/db');
 
 const userRoutes = require('./routes/userRoutes');
@@ -31,5 +30,5 @@ app.get('/', async (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server is Up and Listening on Port ${process.env.PORT}`);
+  console.log(`Server is Up & Listening on Port ${process.env.PORT}`);
 });
