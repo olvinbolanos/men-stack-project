@@ -25,7 +25,7 @@ app.use('/users', userRoutes);
 app.use('/dog', dogRoutes)
 app.use('/auth', authRoutes);
 
-app.get('/', async (req, res) => {
+app.get('*', async (req, res) => {
   res.redirect("/dog")
 });
 

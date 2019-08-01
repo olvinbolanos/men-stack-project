@@ -6,12 +6,9 @@ const userController = {
     index: async (req, res) => {
         try{
             const foundUsers = await User.find({})
-            res.render('users/index.ejs', {
-                user: foundUsers,
-                isLogged: req.session.logged,
-                userId: req.session.userId,
-            })
-        }catch (err){
+            res.redirect('/dogs')
+            
+        } catch (err){
             res.send(err)
         }
     },
