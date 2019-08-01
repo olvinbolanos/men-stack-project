@@ -1,5 +1,5 @@
 const Dog = require('../models/dog')
-const User = require('../models/user');
+const User = require('../models/User');
 
 
 const dogController = {
@@ -128,9 +128,18 @@ const dogController = {
         } catch(err) {
             res.send(err);
         }
+    },
+     shit: async (req, res) => { 
+        try {
+           await  res.render('dog/about.ejs', {
+            isLogged: req.session.logged,
+            userId: req.session.userId
+           }) 
+        } catch (err) {
+            console.log(err)
+        }
     }
-} 
-
+}
 
 
 module.exports = dogController;

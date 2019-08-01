@@ -47,7 +47,8 @@ nav ul{
 }
 
 nav ul li.brand-logo {
-    width: 40%;
+    width: 50%;
+    font-size: 32px;
 }
 
 nav ul li.brand-logo a {
@@ -68,6 +69,7 @@ nav ul li {
     float: left;
     margin: 0;
     padding: 0;
+    cursor: pointer !important;
 }
 
 nav a {
@@ -75,7 +77,6 @@ nav a {
     text-decoration: none;
     display: block;
     padding: 10px; 
-    
 }
 
 nav a:hover {
@@ -85,7 +86,7 @@ nav a:hover {
 }
 
 nav ul.submenu {
-    position: fixed;
+    position: absolute;
     overflow: hidden;
     height: 0;
     border-radius: 0 0 5px 5px;
@@ -254,7 +255,7 @@ section {
 
     .user > a:nth-child(1) {
         position: relative;
-        top: 44px;
+        top: 40px;
     }
 
     nav ul li:hover ul.submenu {
@@ -310,8 +311,6 @@ section {
         right: 0;
         left: 226px;
     }
-
-   
 
     nav ul li:hover ul.submenu {
         height: 170px;
@@ -502,7 +501,6 @@ table {
 td >  h2 {
     margin: 0px 0px 10px 0px; 
     line-height: 30px; 
-    /* font-family: Helvetica;  */
     font-weight: normal; 
     font-size: 17px !important; 
     color: #000000; 
@@ -632,16 +630,14 @@ td {
 
 #square > ul:nth-child(1) > li {
   font-size: 1.75rem;
-  color: snow;
-  text-shadow: 2px 0px 4px black;
+  color: black;
 
 }
 
 .secDiv {
     width: 25%;
     font-size: 1.5rem;
-    color: snow;
-    text-shadow: 2px 0px 3px black;
+    color: black;
     border: 3px solid black;
     border-radius: 5px 10px;
 }
@@ -659,14 +655,12 @@ td {
 .lastDiv >  p {
   font-size: 28px;
   font-size: 1.5rem;
-  color: snow;
-  text-shadow: 2px 0px 3px black;
+  color: black;
 }
 
 .lastDiv > h3 {
   font-size: 32px;
-  color: snow;
-  text-shadow: 2px 0px 3px black;
+  color: black;
 
 }
 
