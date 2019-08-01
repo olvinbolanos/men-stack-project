@@ -48,7 +48,8 @@ nav ul{
 }
 
 nav ul li.brand-logo {
-    width: 100%;
+    width: 50%;
+    font-size: 32px;
 }
 
 nav ul li.brand-logo a {
@@ -255,7 +256,7 @@ section {
 
     .user > a:nth-child(1) {
         position: relative;
-        top: 44px;
+        top: 40px;
     }
 
     nav ul li:hover ul.submenu {
