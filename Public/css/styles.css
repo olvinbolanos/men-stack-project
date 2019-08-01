@@ -304,8 +304,6 @@ section {
         left: 226px;
     }
 
-   
-
     nav ul li:hover ul.submenu {
         height: 170px;
         z-index: 1000;

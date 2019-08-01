@@ -1,5 +1,5 @@
 <%- include ../partials/header %>
-<%-include("../partials/banner.ejs")%>
+<%-include ../partials/banner%>
 
   <%if(!isLogged) {%>
     <%- include ../partials/head %>
@@ -112,7 +112,10 @@
      <p><span>BY BANK TRANSFER</span></br>
       To obtain the wire transformation needed by your bank,
       email FurPet@humaneSociety.org</p>
+      <a href="/dog/about">SEND ME TO DOG Page!!!</a>
+
   </article>
+
 
   <article class="location loc4">
     <p><span>SPECIAL CONTRIBUTORS</span></br>
@@ -123,6 +126,7 @@
   </p>
   </article>
 </section>
+
 
 
 <%- include ../partials/footer %>

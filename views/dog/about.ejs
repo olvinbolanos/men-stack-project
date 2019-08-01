@@ -1,5 +1,14 @@
+
 <%- include ../partials/header %>
-  <%-include("../partials/banner.ejs")%>
-    <h1>Hello There</h1>
+<%-include ../partials/banner%>
+
+  <%if(!isLogged) {%>
+    <%- include ../partials/head %>
+  <%} else {%>
+    <%-include("../partials/navlogged")%>
+  <%}%>
+
+
+    
 
   <%- include ../partials/footer %>
