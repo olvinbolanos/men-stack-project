@@ -6,7 +6,6 @@ const app = express();
 require('dotenv').config();
 const PORT = process.env.PORT;
 
-
 require ('./db/db');
 
 const userRoutes = require('./routes/userRoutes');
@@ -26,7 +25,7 @@ app.use('/users', userRoutes);
 app.use('/dog', dogRoutes)
 app.use('/auth', authRoutes);
 
-app.get('/', async (req, res) => {
+app.get('*', async (req, res) => {
   res.redirect("/dog")
 });
 
