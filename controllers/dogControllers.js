@@ -1,5 +1,5 @@
 const Dog = require('../models/dog')
-const User = require('../models/user');
+const User = require('../models/User');
 
 
 const dogController = {
