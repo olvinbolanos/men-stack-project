@@ -129,7 +129,7 @@ const dogController = {
             res.send(err);
         }
     },
-     shit: async (req, res) => { 
+     about: async (req, res) => { 
         try {
            await  res.render('dog/about.ejs', {
             isLogged: req.session.logged,
