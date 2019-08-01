@@ -7,7 +7,7 @@ const preventEdit = async(req,res,next)=>{
     console.log("checking iusers")
     const user = await User.findOne({'pets': req.params.id})
     console.log(user._id === req.session.userId, user._id, req.session)
-    if(user._id === req.session.userId){
+    if(user._id.toString() === req.session.userId.toString()){
         next()
     } else {
         res.redirect(`/dog/${req.params.id}`)
