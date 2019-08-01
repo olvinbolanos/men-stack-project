@@ -48,7 +48,8 @@ nav ul{
 }
 
 nav ul li.brand-logo {
-    width: 40%;
+    width: 50%;
+    font-size: 32px;
 }
 
 nav ul li.brand-logo a {
@@ -255,7 +256,7 @@ section {
 
     .user > a:nth-child(1) {
         position: relative;
-        top: 44px;
+        top: 40px;
     }
 
     nav ul li:hover ul.submenu {
@@ -630,16 +631,14 @@ td {
 
 #square > ul:nth-child(1) > li {
   font-size: 1.75rem;
-  color: snow;
-  text-shadow: 2px 0px 4px black;
+  color: black;
 
 }
 
 .secDiv {
     width: 25%;
     font-size: 1.5rem;
-    color: snow;
-    text-shadow: 2px 0px 3px black;
+    color: black;
     border: 3px solid black;
     border-radius: 5px 10px;
 }
@@ -657,14 +656,12 @@ td {
 .lastDiv >  p {
   font-size: 28px;
   font-size: 1.5rem;
-  color: snow;
-  text-shadow: 2px 0px 3px black;
+  color: black;
 }
 
 .lastDiv > h3 {
   font-size: 32px;
-  color: snow;
-  text-shadow: 2px 0px 3px black;
+  color: black;
 
 }
 
