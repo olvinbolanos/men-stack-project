@@ -7,7 +7,8 @@ const authController = {
   loginPage: async (req, res) => {
     try {
         res.render('auth/login.ejs', {
-          isLogged: req.session.logged
+          isLogged: req.session.logged,
+          message: req.session.message
         });
     } catch(err) {
       res.send(err);
@@ -34,11 +35,11 @@ const authController = {
           res.redirect('/dog')
         } else {
           req.session.message = 'Incorrect Username or Password'
-          res.redirect('/');
+          res.redirect('/auth/login');
         }
       } else {
         req.session.message = 'Incorrect Username or Password'
-        res.redirect('/');
+        res.redirect('/auth/login');
       }
     } catch(err) {
       res.send(err);
