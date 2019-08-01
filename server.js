@@ -4,6 +4,9 @@ const methodOverride = require('method-override')
 const session = require('express-session');
 const app = express();
 
+require ('dotenv').config();
+const PORT = process.env.PORT
+
 require ('./db/db');
 
 const userRoutes = require('./routes/userRoutes');
@@ -27,6 +30,6 @@ app.get('/', async (req, res) => {
   res.redirect("/dog")
 });
 
-app.listen(3000, () => {
-  console.log("Server is Up & Listening on Port 3000!");
+app.listen(PORT, () => {
+  console.log(`Server is Up & Listening on ${process.env.PORT}`);
 });
