@@ -24,16 +24,15 @@ ________________________________________________________________________________
 ### Technologies Used
 _______________________________________________________________________________________________________________________
 
-* HTML5
-* JavaScript
+* Javascript
+* CSS
+* HTML
 * Express
 * NodeJS
 * MongoDB
 * Mongoose
-* CSS
-* Google Fonts
 * Materialize
-* Git
+* Bcrypt
 * GitHub
 
 
