@@ -317,11 +317,11 @@ section {
         height: 170px;
         z-index: 1000;
     } 
-
-    .user > a:nth-child(1) {
+  .user > a:nth-child(1) {
         position: relative;
         top: 40px;
     }
+
 }
 
 /**** end of nav media query ****/
