@@ -24,22 +24,25 @@ ________________________________________________________________________________
 ### Technologies Used
 _______________________________________________________________________________________________________________________
 
+
 * HTML5
-* JavaScript
+* Javascript
+* CSS
+* HTML
 * Express
 * NodeJS
 * MongoDB
 * Mongoose
-* CSS
 * Google Fonts
 * Materialize
-* Git
 * GitHub
+* Bcrypt
+* Heroku
 
 
 ### Visit the site!
 _______________________________________________________________________________________________________________________
-[Screenshot]()
+[Screenshot] <img src="https://i.imgur.com/HgQQTjW.png">
 
 Visit the project page [here](https://furever-friends.herokuapp.com/dog)
 
