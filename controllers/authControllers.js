@@ -31,10 +31,10 @@ const authController = {
           req.session.username = foundUser.username;
           req.session.logged = true;
           req.session.userId = foundUser._id
-          req.session.message = `Welcome Back ${foundUser.name}!`;
+          req.session.message = `Welcome Back ${foundUser.username}!`;
           res.redirect('/dog')
         } else {
-          req.session.message = 'Incorrect Username or Password'
+          req.session.message = `Incorrect Username or Password`
           res.redirect('/auth/login');
         }
       } else {

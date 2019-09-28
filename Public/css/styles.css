@@ -52,7 +52,7 @@ nav ul li.brand-logo {
 }
 
 nav ul li.brand-logo a {
-    font-size: 50px
+    font-size: 50px;
 }
 
 nav, ul.submenu {
@@ -188,6 +188,7 @@ section {
 }
 
 
+
 /*** nav media query ****/
 
 
@@ -243,7 +244,6 @@ section {
         color: black;
         opacity: 1;
         border-radius: 5px;
-        padding: 0;
         right: 0;
         left: 356px;
     }
@@ -251,8 +251,17 @@ section {
     ul.submenu, ul.submenu a {
         opacity: 1;
         color: black;
+        padding: 0 !important;
     }
 
+    nav ul a {
+        font-size: 1rem;
+        color: #fff;
+        display: block;
+        padding: 0 !important;
+        cursor: pointer;
+        text-align: center;
+    }
 
     .user > a:nth-child(1) {
         position: relative;
@@ -280,11 +289,16 @@ section {
         display: flex;
         justify-content: center;
     }
+
+    nav ul a, ul.submenu > a {
+        padding: 0 !important;
+    }
     
     nav ul.submenu {
         position: fixed;
         overflow: hidden;
         height: 0;
+        padding: 0 !important;
         border-radius: 0 0 5px 5px;
         z-index: 99998;
     }
@@ -311,6 +325,10 @@ section {
         padding: 0;
         right: 0;
         left: 226px;
+    }
+
+    nav ul a, ul.submenu a {
+        padding: 0 !important;
     }
 
     nav ul li:hover ul.submenu {
@@ -831,6 +849,10 @@ article.location > address > span {
         height: calc(38vh - 100px);
         background-position-y: -49px;
       }
+
+      nav ul li.brand-logo a {
+        font-size: 30px !important;
+        width: 30px !important;
   }
     @media screen and (max-width: 500px) {
         .column {
