@@ -72,6 +72,7 @@ const dogController = {
             User.findOne({ 'pets': req.params.id})
             .populate('pets')
             .exec((err, foundAPet) => {
+
                 if(err) {
                     console.log(err)
                 }
