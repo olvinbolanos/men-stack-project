@@ -7,7 +7,7 @@
   <%} else {%>
     <%-include("../partials/navlogged")%>
   <%}%>
-
+  
  <div class="olvin_content_flex">
    
   <article class="aboutInfo">
@@ -16,8 +16,8 @@
     </div>
 
       <p>
-         <span class="aboutName" style="font-size: 24px">Olvin Bolanos</span></br> 
-         <cite style="font-size: 20px;">Full-Stack Web Developer</cite></br> 
+        <span class="aboutName" style="font-size: 24px">Olvin Bolanos</span></br> 
+        <cite style="font-size: 20px;">Full-Stack Web Developer</cite></br> 
       </p>
 
       <aside>
@@ -35,10 +35,10 @@
           This website I've had fun developing the front and back-end. The looks are great and the user could easily navigate through our pages. I like to thank my team members
           for being a real huge help through this project and hopefully this website stands out. 
         </p>
-          <p>
-            Contact me for any more info on how to reach us. I'll be glad to help.
-          </p>
-    </article>
+        <p>
+          Contact me for any more info on how to reach us. I'll be glad to help.
+        </p>
+</article>
 
 
     <article class="aboutInfo">
@@ -66,7 +66,7 @@
               <p>
                 Contact me for any more info on how to reach us. I'll be glad to help.
               </p>
-        </article>
+    </article>
 
 
         <article class="aboutInfo">
@@ -95,18 +95,95 @@
                     If you have any questions, just email me!
                   </p>
             </article>
-  </div>
+        </div>
 
-  <article class="location loc2">
-      <address id="localArea">
-        <span>Address</span></br>
-        Furever Friend Adoption Center
-        ATTN: Development
-        1625 Sundog Ranch Road
-        Pasadena, CA 91101
-      </address>
-    </article>
-
+        <article class="location loc2">
+          <address id="localArea">
+            <span>Address</span></br>
+            Furever Friend Adoption Center
+            ATTN: Development
+            1625 Sundog Ranch Road
+            Pasadena, CA 91101
+          </address>
+        </article>
+        <style>
+            /**** about dog page ****/
+         .olvin_content_flex {
+            display: flex;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            width: 100%;
+          }
+        
+          .aboutInfo {
+            display: flex;
+            flex-flow: column wrap;
+            width: 30%;
+            height: 30%;
+            padding: 5px;
+          }
+        
+          .aboutInfo p {
+            text-align: center;
+          }
+        
+          .aboutImg img{
+            width: 200px;
+            height: 200px;
+            border: 1px solid #513E4B;
+            border-radius: 10px 22px 9px 52px;
+            box-shadow: 3px 8px 9px #513E4B;
+            padding: 2px;
+          }
+        
+          .aboutImg {
+            align-self: center;
+          }
+        
+          .fab {
+            font-size: 40px;
+            color: #513E4B;
+            margin: 5px;
+            font-weight: bold;
+            transition: -webkit-transform 1s, opacity 1s, background 1s, width 1s, height 1s, font-size 1s;
+            transition-property: width, height, transform, background, font-size, opacity;
+            transition-duration: 1s 1s 1s 1s 1s 1s;
+            border-radius: 5px;
+            opacity: 0.4;
+        
+          }
+        
+          .fab:hover {
+            background: #ffffff;
+            color: red;
+            opacity: 1;
+            font-size: 55px;
+          }
+        
+        @media screen and (max-width: 800px) {
+            .olvin_content_flex {
+            flex-flow: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+          }
+        
+          .aboutInfo {
+            display: flex;
+            flex-flow: column wrap;
+            width: 60%;
+            height: 40%;
+            padding: 5px;
+          }
+        
+          .aboutInfo p {
+            text-align: center;
+          }
+        
+        }
+          </style> 
+        
 
    
   <%- include ../partials/footer %>

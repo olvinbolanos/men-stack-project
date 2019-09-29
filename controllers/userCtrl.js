@@ -6,7 +6,7 @@ const userController = {
     index: async (req, res) => {
         try{
             const foundUsers = await User.find({})
-            res.redirect('/dogs')
+            res.redirect('/dog')
             
         } catch (err){
             res.send(err)
