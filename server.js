@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override')
-const session = require('express-session');
+var session = require('cookie-session');
 const app = express();
 require('dotenv').config();
 const PORT = process.env.PORT;
@@ -16,10 +16,21 @@ app.use(express.static('Public'))
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(methodOverride('_method'));
 app.use(session({
+  cookie:{
+    secure: true,
+    maxAge:60000
+  },
   secret: 'This Is A Secret String',
   resave: false,
-  saveUninitialized: false
+  saveUninitialized: true
 }));
+
+app.use(function(req,res,next){
+  if(!req.session){
+      return next(new Error('Oh no')) //handle error
+  }
+  next() //otherwise continue
+});
 
 app.use('/users', userRoutes);
 app.use('/dog', dogRoutes)
